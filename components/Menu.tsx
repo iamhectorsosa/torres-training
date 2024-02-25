@@ -6,7 +6,7 @@ import { Link } from "@/components/ui/link";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import IMG_9252 from "/public/images/IMG_9252.jpg";
+import IMG_9252 from "../public/images/IMG_9252.jpg";
 
 export const Menu: React.FC<{
   navLinks: { href: string; label: string }[];

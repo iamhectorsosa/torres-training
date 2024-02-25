@@ -5,7 +5,7 @@ import { InView } from "@/components/InView";
 import Image from "next/image";
 import Link from "next/link";
 
-import FabioTorres from "/public/images/IMG_9211.jpg";
+import FabioTorres from "../public/images/IMG_9211.jpg";
 
 export default function Home() {
   return (
