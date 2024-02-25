@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const images: { alt: string; src: string }[] = [

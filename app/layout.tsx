@@ -21,7 +21,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://torrestraining.pt"),
+  metadataBase: new URL("https://torres-training.vercel.app"),
   title: "Torres Training",
   description: "By Fabio Torres - Certified Personal Trainer & Osteopath",
   keywords: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Torres Training",
     description: "By Fabio Torres - Certified Personal Trainer & Osteopath",
-    url: new URL("https://torrestraining.pt"),
+    url: new URL("https://torres-training.vercel.app"),
     siteName: "Torres Training",
     locale: "en-US",
     type: "website",
