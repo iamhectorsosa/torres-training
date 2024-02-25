@@ -6,7 +6,6 @@ import { Link } from "@/components/ui/link";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import IMG_9252 from "../public/images/IMG_9252.jpg";
 
 export const Menu: React.FC<{
   navLinks: { href: string; label: string }[];
@@ -84,7 +83,7 @@ export const Menu: React.FC<{
           <div className="lg:h-full h-[50%] w-full relative">
             <Image
               alt="Fabio Torres"
-              src={IMG_9252}
+              src={"/images/IMG_9252.jpg"}
               fill
               className="object-cover object-center h-full w-full pointer-events-none"
             />

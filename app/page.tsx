@@ -5,8 +5,6 @@ import { InView } from "@/components/InView";
 import Image from "next/image";
 import Link from "next/link";
 
-import FabioTorres from "../public/images/IMG_9211.jpg";
-
 export default function Home() {
   return (
     <div className="mx-auto space-y-16 flex flex-col items-center pt-[16dvh] lg:pt-[20dvh] py-16">
@@ -41,7 +39,7 @@ export default function Home() {
           <header className="space-y-3 lg:space-y-4">
             <div className="overflow-hidden w-[240px] aspect-square rounded-full relative shadow mx-auto">
               <Image
-                src={FabioTorres}
+                src={"/images/IMG_9211.jpg"}
                 alt={"Fabio Torres"}
                 className="h-fit w-fit object-cover object-top"
                 sizes="240px"
