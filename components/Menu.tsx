@@ -83,7 +83,7 @@ export const Menu: React.FC<{
           <div className="lg:h-full h-[50%] w-full relative">
             <Image
               alt="Fabio Torres"
-              src={"/images/IMG_9252.jpg"}
+              src={"/images/IMG_9252.JPG"}
               fill
               className="object-cover object-center h-full w-full pointer-events-none"
             />

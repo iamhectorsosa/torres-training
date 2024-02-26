@@ -39,7 +39,7 @@ export default function Home() {
           <header className="space-y-3 lg:space-y-4">
             <div className="overflow-hidden w-[240px] aspect-square rounded-full relative shadow mx-auto">
               <Image
-                src={"/images/IMG_9211.jpg"}
+                src={"/images/IMG_9211.JPG"}
                 alt={"Fabio Torres"}
                 className="h-fit w-fit object-cover object-top"
                 sizes="240px"

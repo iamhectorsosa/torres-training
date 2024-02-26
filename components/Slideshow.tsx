@@ -6,25 +6,25 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const images: { alt: string; src: string }[] = [
-  { alt: "Torres Training", src: "/images/IMG_9212_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9213_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9221.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9224.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9226_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9228_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9229_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9230_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9233_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9234_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9238_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9252.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9257_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9259_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9263_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9266.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9492_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9495_2.jpg" },
-  { alt: "Torres Training", src: "/images/IMG_9498_2.jpg" },
+  { alt: "Torres Training", src: "/images/IMG_9212_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9213_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9221.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9224.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9226_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9228_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9229_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9230_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9233_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9234_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9238_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9252.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9257_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9259_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9263_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9266.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9492_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9495_2.JPG" },
+  { alt: "Torres Training", src: "/images/IMG_9498_2.JPG" },
 ];
 
 export const Slideshow: React.FC = () => {
@@ -57,6 +57,7 @@ export const Slideshow: React.FC = () => {
           >
             <div className="overflow-hidden rounded-md w-[240px] aspect-[3/4] relative shadow">
               <Image
+                priority
                 src={src}
                 alt={alt}
                 className="h-fit w-fit object-cover"

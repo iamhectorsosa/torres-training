@@ -5,7 +5,11 @@ import { useInView } from "framer-motion";
 
 export const InView: React.FC<React.PropsWithChildren> = ({ children }) => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, {
+    margin: "180px 0px",
+    amount: "all",
+    once: true,
+  });
 
   return (
     <section ref={ref}>
