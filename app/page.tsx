@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import IMG_9211 from "../public/images/IMG_9211.jpg";
 import { Highlight } from "@/components/Highlight";
+import { Certifications } from "@/components/Certifications";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
             </p>
           </header>
           <Button asChild>
-            <Link href="#start-your-journey">Start your journey</Link>
+            <Link href="#me">Start your journey</Link>
           </Button>
         </section>
       </FadeIn>
@@ -30,7 +31,7 @@ export default function Home() {
         <Slideshow />
       </FadeIn>
       <section
-        id="start-your-journey"
+        id="me"
         className="flex flex-col gap-y-3 lg:gap-y-4 justify-center items-center max-w-3xl scroll-mt-28"
       >
         <div className="flex flex-col gap-y-3 lg:gap-y-4 justify-center items-center">
@@ -40,7 +41,7 @@ export default function Home() {
               priority
               src={IMG_9211}
               alt={"Fabio Torres"}
-              className="h-[240px] w-[240px] rounded-full shadow object-cover object-top"
+              className="h-[240px] w-[240px] aspect-square rounded-full shadow object-cover object-top"
               sizes="240px"
             />
           </InView>
@@ -58,6 +59,9 @@ export default function Home() {
                 performance, functional rehabilitation and overall fitness.
               </p>
             </div>
+          </InView>
+          <InView>
+            <Certifications />
           </InView>
         </div>
       </section>

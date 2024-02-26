@@ -23,7 +23,7 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://torres-training.vercel.app"),
   title: "Torres Training",
-  description: "By Fabio Torres - Certified Personal Trainer & Osteopath",
+  description: "by Fabio Torres, Certified Personal Trainer & Osteopath",
   keywords: [
     "Lisbon",
     "Personal",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Torres Training",
-    description: "By Fabio Torres - Certified Personal Trainer & Osteopath",
+    description: "by Fabio Torres, Certified Personal Trainer & Osteopath",
     url: new URL("https://torres-training.vercel.app"),
     siteName: "Torres Training",
     locale: "en-US",
@@ -83,15 +83,19 @@ export default function RootLayout({
 const navLinks = [
   {
     label: "Personal Training",
-    href: "/personal-training",
+    href: "/",
   },
   {
     label: "FRC Mobility Training",
-    href: "/mobility-training",
+    href: "/",
   },
   {
     label: "Reviews",
-    href: "/reviews",
+    href: "/",
+  },
+  {
+    label: "Contact",
+    href: "/",
   },
 ];
 
