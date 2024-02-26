@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Link } from "@/components/ui/link";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
+import { Providers } from "@/components/Providers";
 
 const fontHeadings = FontHeadings({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://torres-training.vercel.app"),
+  metadataBase: new URL("https://torrestraining.pt"),
   title: "Torres Training",
   description: "by Fabio Torres, Certified Personal Trainer & Osteopath",
   keywords: [
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Torres Training",
     description: "by Fabio Torres, Certified Personal Trainer & Osteopath",
-    url: new URL("https://torres-training.vercel.app"),
+    url: new URL("https://torrestraining.pt"),
     siteName: "Torres Training",
     locale: "en-US",
     type: "website",
@@ -58,23 +59,25 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <main className="relative z-10 bg-background">
-          <div className="px-6 sticky top-0 pt-8 z-30 bg-background/80 backdrop-blur-lg w-full">
-            <nav className="flex max-w-7xl mx-auto justify-between items-center">
-              <Link
-                href="/"
-                className="uppercase font-bold tracking-wide leading-none hover:no-underline"
-              >
-                Torres Training
-              </Link>
-              <Menu navLinks={navLinks} contactLinks={contactLinks} />
-            </nav>
-          </div>
-          <div className="px-6 pb-8">{children}</div>
-        </main>
-        <footer className="bg-neutral-900 px-6 pt-9 pb-20 mt-auto sticky bottom-0">
-          <Footer navLinks={navLinks} contactLinks={contactLinks} />
-        </footer>
+        <Providers>
+          <main className="relative z-10 bg-background">
+            <div className="px-6 sticky top-0 pt-8 z-30 bg-background/80 backdrop-blur-lg w-full">
+              <nav className="flex max-w-7xl mx-auto justify-between items-center">
+                <Link
+                  href="/"
+                  className="uppercase font-bold tracking-wide leading-none hover:no-underline"
+                >
+                  Torres Training
+                </Link>
+                <Menu navLinks={navLinks} contactLinks={contactLinks} />
+              </nav>
+            </div>
+            <div className="px-6 pb-8">{children}</div>
+          </main>
+          <footer className="bg-secondary px-6 pt-9 pb-20 mt-auto sticky bottom-0">
+            <Footer navLinks={navLinks} contactLinks={contactLinks} />
+          </footer>
+        </Providers>
       </body>
     </html>
   );

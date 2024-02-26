@@ -62,8 +62,7 @@ export const Menu: React.FC<{
                     className="block text-3xl lg:text-4xl font-headings decoration-4 underline-offset-[6px] relative hover:no-underline"
                     href={href}
                   >
-                    <span className="absolute top-0 left-2 -rotate-6 -translate-x-[50%] w-9 h-4 -skew-y-2 bg-amber-200"></span>
-                    <span className="relative">{label}</span>
+                    {label}
                   </Link>
                 </motion.div>
               ))}

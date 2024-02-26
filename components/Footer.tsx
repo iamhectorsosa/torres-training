@@ -10,7 +10,7 @@ export const Footer: React.FC<{
       <div className="space-y-2">
         <Link
           href="/"
-          className="uppercase font-bold tracking-wide leading-none hover:no-underline text-muted decoration-muted"
+          className="uppercase font-bold tracking-wide leading-none hover:no-underline text-secondary-foreground decoration-secondary-foreground"
         >
           Torres Training
         </Link>
@@ -18,7 +18,7 @@ export const Footer: React.FC<{
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
-              className="block text-muted decoration-muted text-sm font-medium"
+              className="block text-secondary-foreground decoration-secondary-foreground text-sm font-medium"
               href={href}
             >
               {label}
@@ -27,14 +27,14 @@ export const Footer: React.FC<{
         </div>
       </div>
       <div className="space-y-2.5 lg:text-right">
-        <h2 className="text-sm text-muted uppercase font-semibold tracking-wide">
+        <h2 className="text-sm text-secondary-foreground uppercase font-semibold tracking-wide">
           Contact
         </h2>
         <div className="gap-y-2 flex flex-col lg:items-end">
           {contactLinks.map(({ href, label }) => (
             <Link
               key={href}
-              className="block text-muted decoration-muted text-sm font-medium"
+              className="block text-secondary-foreground decoration-secondary-foreground text-sm font-medium"
               href={href}
             >
               {label}

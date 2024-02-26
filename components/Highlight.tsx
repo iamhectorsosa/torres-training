@@ -16,7 +16,7 @@ export const Highlight: React.FC<React.PropsWithChildren> = ({ children }) => {
           opacity: isInView ? 1 : 0,
           transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
-        className="absolute top-2.5 -left-[5%] h-2 -skew-y-1 bg-amber-200"
+        className="absolute top-2.5 -left-[5%] h-2 -skew-y-1 bg-accent"
       ></span>
       <span className="relative text-sm uppercase font-medium tracking-wide">
         {children}
