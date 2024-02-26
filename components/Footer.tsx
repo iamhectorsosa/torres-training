@@ -27,9 +27,9 @@ export const Footer: React.FC<{
         </div>
       </div>
       <div className="space-y-2.5 lg:text-right">
-        <h3 className="text-sm text-muted uppercase font-semibold tracking-wide">
+        <h2 className="text-sm text-muted uppercase font-semibold tracking-wide">
           Contact
-        </h3>
+        </h2>
         <div className="gap-y-2 flex flex-col lg:items-end">
           {contactLinks.map(({ href, label }) => (
             <Link
