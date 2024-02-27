@@ -18,7 +18,7 @@ export const Highlight: React.FC<React.PropsWithChildren> = ({ children }) => {
         }}
         className="absolute top-2.5 -left-[5%] h-2 -skew-y-1 bg-accent"
       ></span>
-      <span className="relative text-sm uppercase font-medium tracking-wide">
+      <span className="relative uppercase font-medium tracking-wide">
         {children}
       </span>
     </div>

@@ -7,6 +7,7 @@ import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import IMG_9263_2 from "../public/images/IMG_9263_2.jpg";
+import IMG_9228_2 from "../public/images/IMG_9228_2.jpg";
 
 export const Menu: React.FC<{
   navLinks: { href: string; label: string }[];
@@ -80,14 +81,22 @@ export const Menu: React.FC<{
               ))}
             </div>
           </div>
-          <div className="lg:h-full h-[50%] w-full relative">
+          <div className="lg:h-full h-[40%] w-full relative">
             <Image
               placeholder="blur"
               priority
               alt="Fabio Torres"
               src={IMG_9263_2}
               fill
-              className="object-cover object-center h-full w-full pointer-events-none"
+              className="object-cover object-center h-full w-full pointer-events-none hidden lg:block"
+            />
+            <Image
+              placeholder="blur"
+              priority
+              alt="Fabio Torres"
+              src={IMG_9228_2}
+              fill
+              className="object-cover object-center h-full w-full pointer-events-none block lg:hidden"
             />
           </div>
         </div>

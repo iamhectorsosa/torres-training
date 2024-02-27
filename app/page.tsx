@@ -5,8 +5,9 @@ import { InView } from "@/components/InView";
 import Image from "next/image";
 import Link from "next/link";
 import IMG_9211 from "../public/images/IMG_9211.jpg";
+import logos from "../public/logos.svg";
+import logosDark from "../public/logos-dark.svg";
 import { Highlight } from "@/components/Highlight";
-import { Certifications } from "@/components/Certifications";
 
 export default function Home() {
   return (
@@ -61,7 +62,18 @@ export default function Home() {
             </div>
           </InView>
           <InView>
-            <Certifications />
+            <div className="max-w-lg mx-auto pt-6">
+              <Image
+                className="dark:hidden"
+                src={logos}
+                alt="Fabio Torres Accreditations"
+              />
+              <Image
+                className="hidden dark:block"
+                src={logosDark}
+                alt="Fabio Torres Accreditations"
+              />
+            </div>
           </InView>
         </div>
       </section>

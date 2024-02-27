@@ -12,7 +12,7 @@ export const InView: React.FC<React.PropsWithChildren> = ({ children }) => {
   });
 
   return (
-    <section ref={ref}>
+    <div ref={ref}>
       <div
         style={{
           transform: isInView ? "none" : "translateY(20px)",
@@ -22,6 +22,6 @@ export const InView: React.FC<React.PropsWithChildren> = ({ children }) => {
       >
         {children}
       </div>
-    </section>
+    </div>
   );
 };

@@ -86,19 +86,15 @@ export default function RootLayout({
 const navLinks = [
   {
     label: "Personal Training",
-    href: "/",
+    href: "https://wa.me/351961379705",
   },
   {
     label: "FRC Mobility Training",
-    href: "/",
-  },
-  {
-    label: "Reviews",
-    href: "/",
+    href: "https://wa.me/351961379705",
   },
   {
     label: "Contact",
-    href: "/",
+    href: "https://wa.me/351961379705",
   },
 ];
 
