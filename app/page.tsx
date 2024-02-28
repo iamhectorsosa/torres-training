@@ -20,7 +20,7 @@ export default function Home() {
         <FadeIn className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center lg:mt-auto">
           <Highlight>Torres Training</Highlight>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-headings">
-            Certified Personal Trainer and Osteopath
+            Personal Trainer and Osteopath
           </h1>
           <p className="text-muted-foreground text-xl lg:text-2xl tracking-tight">
             Ready to take your fitness to the next level?
