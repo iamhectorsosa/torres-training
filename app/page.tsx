@@ -91,7 +91,7 @@ export default function Home() {
           </div>
         </InView>
       </section>
-      <section className="flex flex-col gap-y-4 justify-center items-center pt-24 lg:pt-36 pb-24">
+      <section className="flex flex-col gap-y-4 justify-center items-center pt-24 lg:pt-32 pb-24">
         <InView>
           <div className="flex flex-col gap-y-4 max-w-3xl">
             <div className="flex flex-col gap-y-4">
