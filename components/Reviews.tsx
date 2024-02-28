@@ -40,10 +40,10 @@ export const Reviews: React.FC<{
 
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "reverse"
+          "forwards"
         );
 
-        containerRef.current.style.setProperty("--animation-duration", "320s");
+        containerRef.current.style.setProperty("--animation-duration", "120s");
 
         setStart(true);
       }
