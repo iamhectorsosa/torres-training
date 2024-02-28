@@ -11,22 +11,18 @@ import { Highlight } from "@/components/Highlight";
 
 export default function Home() {
   return (
-    <div className="mx-auto space-y-16 flex flex-col items-center py-16 pt-[16dvh] lg:pt-[20dvh]">
-      <FadeIn>
-        <section className="flex flex-col gap-y-3 lg:gap-y-4 justify-center items-center max-w-3xl">
-          <header className="flex flex-col gap-y-3 lg:gap-y-4 justify-center items-center text-center">
-            <Highlight>Torres Training</Highlight>
-            <h1 className="text-4xl lg:text-6xl font-headings">
-              Certified Personal Trainer and Osteopath
-            </h1>
-            <p className="text-muted-foreground text-xl lg:text-2xl tracking-tight">
-              Ready to take your fitness to the next level?
-            </p>
-          </header>
-          <Button asChild>
-            <Link href="#me">Start your journey</Link>
-          </Button>
-        </section>
+    <div className="mx-auto space-y-16 flex flex-col items-center py-14 pt-[14dvh] lg:pt-[20dvh]">
+      <FadeIn className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center">
+        <Highlight>Torres Training</Highlight>
+        <h1 className="text-5xl lg:text-7xl font-headings">
+          Certified Personal Trainer and Osteopath
+        </h1>
+        <p className="text-muted-foreground text-xl lg:text-2xl tracking-tight">
+          Ready to take your fitness to the next level?
+        </p>
+        <Button asChild size="lg">
+          <Link href="#me">Start your journey</Link>
+        </Button>
       </FadeIn>
       <FadeIn>
         <Slideshow />
@@ -53,7 +49,7 @@ export default function Home() {
                 I am dedicated to helping individuals of all fitness levels
                 achieve their health and wellness goals
               </h1>
-              <p className="text-muted-foreground lg:text-lg tracking-tight">
+              <p className="text-muted-foreground lg:text-lg tracking-tight leading-relaxed">
                 Over the last decade in Lisbon, Portugal, I&apos;ve successfully
                 helped numerous clients achieve their fitness goals, ranging
                 from wheight loss and muscle gain, to improved athletic
@@ -85,7 +81,7 @@ export default function Home() {
               Are you ready to embark on a journey to transform your health and
               fitness? Look no further!
             </h1>
-            <p className="text-muted-foreground lg:text-lg tracking-tight">
+            <p className="text-muted-foreground lg:text-lg tracking-tight leading-relaxed">
               My personal training program offers tailored 1-1 sessions and
               expert guidance to help you achieve your goals, whether
               you&apos;re aiming to lose weight, build muscle, improve
@@ -102,7 +98,7 @@ export default function Home() {
             <h1 className="text-lg lg:text-2xl font-headings">
               Mobility is the Foundation to Healthy joints
             </h1>
-            <p className="text-muted-foreground lg:text-lg tracking-tight">
+            <p className="text-muted-foreground lg:text-lg tracking-tight leading-relaxed">
               This is the most comprehensive mobility training system in the
               world that goes beyond traditional stretching routines and
               flexibility methods. FRC not only expands range of motion and

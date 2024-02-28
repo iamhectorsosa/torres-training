@@ -42,12 +42,12 @@ export const Menu: React.FC<{
                   opacity: 1,
                   y: 0,
                   transition: {
-                    delayChildren: 0.25,
-                    staggerChildren: 0.2,
+                    delayChildren: 0.3,
+                    staggerChildren: 0.24,
                   },
                 },
               }}
-              className="space-y-6 lg:space-y-9 mt-auto"
+              className="space-y-9 lg:space-y-12 mt-auto px-2"
             >
               {navLinks.map(({ href, label }) => (
                 <motion.div
@@ -56,14 +56,39 @@ export const Menu: React.FC<{
                     hidden: { opacity: 0 },
                     show: { opacity: 1 },
                   }}
-                  whileHover={{ x: 5 }}
+                  whileHover={{
+                    x: 9,
+                  }}
                 >
                   <Link
                     key={href}
                     className="block text-3xl lg:text-4xl font-headings decoration-4 underline-offset-[6px] relative hover:no-underline"
                     href={href}
                   >
-                    {label}
+                    <motion.span
+                      aria-hidden
+                      className="absolute w-16 aspect-square -top-6 -left-6"
+                    >
+                      <svg
+                        className="fill-none stroke-primary"
+                        viewBox="0 0 200 200"
+                        stroke="#d6ab04"
+                        fill="none"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="fill-accent"
+                          stroke="none"
+                          transform="translate(-10,-10)"
+                          d="M159.5 45 41 85.5l7.5 70 81-56 30-54.5Z"
+                        />
+                        <path d="M159.5 45 41 85.5l7.5 70 81-56 30-54.5Z" />
+                      </svg>
+                    </motion.span>
+                    <span className="relative">{label}</span>
                   </Link>
                 </motion.div>
               ))}
