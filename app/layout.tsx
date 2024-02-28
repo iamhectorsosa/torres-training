@@ -9,6 +9,7 @@ import { Link } from "@/components/ui/link";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { Providers } from "@/components/Providers";
+import { Analytics } from "@vercel/analytics/react";
 
 const fontHeadings = FontHeadings({
   subsets: ["latin"],
@@ -72,7 +73,10 @@ export default function RootLayout({
                 <Menu navLinks={navLinks} contactLinks={contactLinks} />
               </nav>
             </div>
-            <div className="px-6">{children}</div>
+            <div className="px-6">
+              {children}
+              <Analytics />
+            </div>
           </main>
           <footer className="bg-secondary px-6 pt-9 pb-20 mt-auto sticky bottom-0">
             <Footer navLinks={navLinks} contactLinks={contactLinks} />
