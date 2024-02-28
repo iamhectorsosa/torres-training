@@ -10,13 +10,13 @@ import logosDark from "../public/logos-dark.svg";
 import logosMobile from "../public/logos-mobile.svg";
 import logosDarkMobile from "../public/logos-dark-mobile.svg";
 import { Highlight } from "@/components/Highlight";
-import { Arrow } from "@/components/Arrow";
+import { Scroll } from "@/components/Scroll";
 
 export default function Home() {
   return (
     <div>
-      <section className="h-[98dvh] flex flex-col items-center justify-center gap-y-8 lg:gap-y-16">
-        <FadeIn className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center">
+      <section className="h-[95dvh] flex flex-col items-center justify-center gap-y-8 lg:gap-y-16 lg:py-32">
+        <FadeIn className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center lg:mt-auto">
           <Highlight>Torres Training</Highlight>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-headings">
             Certified Personal Trainer and Osteopath
@@ -28,12 +28,10 @@ export default function Home() {
             <Link href="#me">Start your journey</Link>
           </Button>
         </FadeIn>
-        <FadeIn>
+        <FadeIn className="flex items-center justify-center flex-col gap-y-6">
           <Slideshow />
+          <Scroll />
         </FadeIn>
-        <div className="w-32 h-32 lg:h-44 lg:w-44 opacity-80 flex flex-col items-center justify-center gap-y-1">
-          <Arrow />
-        </div>
       </section>
       <section
         id="me"
@@ -93,7 +91,7 @@ export default function Home() {
           </div>
         </InView>
       </section>
-      <section className="flex flex-col gap-y-4 justify-center items-center pt-24 lg:pt-30 pb-24">
+      <section className="flex flex-col gap-y-4 justify-center items-center pt-24 lg:pt-36 pb-24">
         <InView>
           <div className="flex flex-col gap-y-4 max-w-3xl">
             <div className="flex flex-col gap-y-4">

@@ -75,7 +75,7 @@ export const Slideshow: React.FC = () => {
             key={i}
             className="shrink-0"
           >
-            <div className="overflow-hidden rounded-md w-[14dvh] aspect-[3/6] lg:w-[240px] lg:aspect-[3/5] relative shadow">
+            <div className="overflow-hidden rounded-md w-[14dvh] lg:w-[240px] aspect-[3/5] relative shadow">
               <Image
                 loading={i > 5 ? "lazy" : undefined}
                 priority={i <= 5}
