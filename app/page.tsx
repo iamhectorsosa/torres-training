@@ -13,7 +13,33 @@ import { Highlight } from "@/components/Highlight";
 import { Scroll } from "@/components/Scroll";
 import { Reviews } from "@/components/Reviews";
 
-export default function Home() {
+async function getReviews(): Promise<typeof staticReviews> {
+  if (process.env.NODE_ENV === "production") {
+    const response = await fetch(
+      `https://maps.googleapis.com/maps/api/place/details/json?placeid=${process.env.GOOGLE_MAPS_PLACE_ID}&key=${process.env.GOOGLE_MAPS_KEY}`,
+      {
+        next: { revalidate: 86400 },
+      }
+    )
+      .then((data) => data.json())
+      .catch((error) => {
+        if (error instanceof Error) {
+          console.error(error);
+        } else {
+          console.error("Unknown error fetching reviews");
+        }
+        return staticReviews;
+      });
+
+    return response.result.reviews;
+  }
+
+  return Promise.resolve(staticReviews);
+}
+
+export default async function Home() {
+  const reviews = await getReviews();
+
   return (
     <div>
       <section className="h-[95dvh] flex flex-col items-center justify-center gap-y-8 lg:gap-y-16 lg:py-32">
@@ -130,28 +156,32 @@ export default function Home() {
           </div>
         </InView>
       </section>
-      <InView>
-        <section className="mx-auto max-w-7xl pb-24 flex gap-y-4 flex-col justify-center items-center pt-24 lg:pt-32">
-          <div className="max-w-3xl mx-auto flex gap-y-4 flex-col justify-center items-center text-center">
+      <section className="flex gap-y-4 flex-col justify-center items-center pt-24 lg:pt-32 pb-24">
+        <InView>
+          <div className="flex gap-y-4 flex-col justify-center items-center text-center max-w-3xl">
             <Highlight>Reviews</Highlight>
             <h1 className="text-xl lg:text-3xl font-headings">
               I am dedicated to helping individuals of all fitness levels
               achieve their health and wellness goals
             </h1>
           </div>
-          <Reviews reviews={reviews} />
-          <Button size="lg" asChild>
-            <Link href="https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7">
-              Leave a review
-            </Link>
-          </Button>
-        </section>
-      </InView>
+        </InView>
+        <InView amount="some">
+          <div className="flex flex-col gap-y-4 items-center">
+            <Reviews reviews={reviews} />
+            <Button size="lg" asChild>
+              <Link href="https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7">
+                Leave a review
+              </Link>
+            </Button>
+          </div>
+        </InView>
+      </section>
     </div>
   );
 }
 
-const reviews = [
+const staticReviews = [
   {
     author_name: "Daniela Villalobos Torres",
     author_url:

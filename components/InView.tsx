@@ -3,11 +3,13 @@
 import * as React from "react";
 import { useInView } from "framer-motion";
 
-export const InView: React.FC<React.PropsWithChildren> = ({ children }) => {
+export const InView: React.FC<
+  React.PropsWithChildren & { amount?: "all" | "some" }
+> = ({ children, amount = "all" }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, {
-    margin: "180px 0px",
-    amount: "all",
+    margin: "120px 0px 0px",
+    amount,
     once: true,
   });
 

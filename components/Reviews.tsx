@@ -43,7 +43,7 @@ export const Reviews: React.FC<{
           "forwards"
         );
 
-        containerRef.current.style.setProperty("--animation-duration", "120s");
+        containerRef.current.style.setProperty("--animation-duration", "80s");
 
         setStart(true);
       }
