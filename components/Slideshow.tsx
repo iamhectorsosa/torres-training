@@ -64,7 +64,7 @@ export const Slideshow: React.FC = () => {
             },
           },
         }}
-        className="flex w-max gap-x-6"
+        className="flex w-max gap-x-4 lg:gap-x-6"
       >
         {images.map(({ alt, src }, i) => (
           <motion.figure
@@ -75,7 +75,7 @@ export const Slideshow: React.FC = () => {
             key={i}
             className="shrink-0"
           >
-            <div className="overflow-hidden rounded-md w-[240px] aspect-[3/4] relative shadow">
+            <div className="overflow-hidden rounded-md w-[14dvh] aspect-[3/6] lg:w-[240px] lg:aspect-[3/5] relative shadow">
               <Image
                 loading={i > 5 ? "lazy" : undefined}
                 priority={i <= 5}
@@ -83,7 +83,6 @@ export const Slideshow: React.FC = () => {
                 src={src}
                 alt={alt}
                 className="h-fit w-fit object-cover"
-                sizes="240px"
                 fill
               />
             </div>

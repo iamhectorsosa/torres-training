@@ -60,7 +60,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <main className="relative z-10 bg-background">
+          <main className="z-10 bg-background">
             <div className="px-6 sticky top-0 pt-8 z-30 bg-background/80 backdrop-blur-lg w-full">
               <nav className="flex max-w-7xl mx-auto justify-between items-center">
                 <Link
@@ -72,7 +72,7 @@ export default function RootLayout({
                 <Menu navLinks={navLinks} contactLinks={contactLinks} />
               </nav>
             </div>
-            <div className="px-6 pb-8">{children}</div>
+            <div className="px-6">{children}</div>
           </main>
           <footer className="bg-secondary px-6 pt-9 pb-20 mt-auto sticky bottom-0">
             <Footer navLinks={navLinks} contactLinks={contactLinks} />
