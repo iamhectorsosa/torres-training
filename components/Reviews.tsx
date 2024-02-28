@@ -63,15 +63,12 @@ export const Reviews: React.FC<{
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "scroller relative overflow-hidden w-full cursor-default",
-        className
-      )}
+      className={cn("scroller cursor-default w-dvw overflow-hidden", className)}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex min-w-full gap-4 py-4 w-max flex-nowrap items-center",
+          "flex gap-4 py-4 w-max flex-nowrap",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
