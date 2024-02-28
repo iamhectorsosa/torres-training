@@ -11,6 +11,7 @@ import logosMobile from "../public/logos-mobile.svg";
 import logosDarkMobile from "../public/logos-dark-mobile.svg";
 import { Highlight } from "@/components/Highlight";
 import { Scroll } from "@/components/Scroll";
+import { Reviews } from "@/components/Reviews";
 
 export default function Home() {
   return (
@@ -91,7 +92,7 @@ export default function Home() {
           </div>
         </InView>
       </section>
-      <section className="flex flex-col gap-y-4 justify-center items-center pt-24 lg:pt-32 pb-24">
+      <section className="flex flex-col gap-y-4 justify-center items-center pt-24 lg:pt-32">
         <InView>
           <div className="flex flex-col gap-y-4 max-w-3xl">
             <div className="flex flex-col gap-y-4">
@@ -129,6 +130,96 @@ export default function Home() {
           </div>
         </InView>
       </section>
+      <InView>
+        <section className="mx-auto max-w-7xl pb-24 flex gap-y-4 flex-col justify-center items-center pt-24 lg:pt-32">
+          <div className="max-w-3xl mx-auto flex gap-y-4 flex-col justify-center items-center text-center">
+            <Highlight>Reviews</Highlight>
+            <h1 className="text-xl lg:text-3xl font-headings">
+              I am dedicated to helping individuals of all fitness levels
+              achieve their health and wellness goals
+            </h1>
+          </div>
+          <Reviews reviews={reviews} />
+          <Button size="lg" asChild>
+            <Link href="https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7">
+              Leave a review
+            </Link>
+          </Button>
+        </section>
+      </InView>
     </div>
   );
 }
+
+const reviews = [
+  {
+    author_name: "Daniela Villalobos Torres",
+    author_url:
+      "https://www.google.com/maps/contrib/106329556966057521436/reviews",
+    language: "en",
+    original_language: "en",
+    profile_photo_url:
+      "https://lh3.googleusercontent.com/a/ACg8ocJn4LRiNRoXtG1Q6Ff4Tqb01LeUwFC-8V57vJNb20o9=s128-c0x00000000-cc-rp-mo",
+    rating: 5,
+    relative_time_description: "3 months ago",
+    text: "Great place to train with amazing staff; they also speak not only in Portuguese but English. And most important, they have a holistic vision between osteopathy and personalized training.",
+    time: 1700516149,
+    translated: false,
+  },
+  {
+    author_name: "Victor Hansen",
+    author_url:
+      "https://www.google.com/maps/contrib/111537559485101205749/reviews",
+    language: "en",
+    original_language: "en",
+    profile_photo_url:
+      "https://lh3.googleusercontent.com/a/ACg8ocKq2Htd0_QnmDxvyOAYSlUzn2dEsCVTrtEphoq_6zvxnw=s128-c0x00000000-cc-rp-mo",
+    rating: 5,
+    relative_time_description: "4 months ago",
+    text: "I've been working with Fabio for the past year and I can highly recommend his services. He speak excellent English and extremely knowledgeable. Initially I came to him to get help with a hip impingment which he resolved quickly. After this I've been using him a a strength coach 3x week with very good progress. He's the best PT I've ever worked with.",
+    time: 1698612373,
+    translated: false,
+  },
+  {
+    author_name: "Basilio Paz",
+    author_url:
+      "https://www.google.com/maps/contrib/110461696352716876082/reviews",
+    language: "en",
+    original_language: "en",
+    profile_photo_url:
+      "https://lh3.googleusercontent.com/a-/ALV-UjVHszmV2adNOgW4DkF3_0SOH2LiMC1j2yS2FEh83t7K3RL5=s128-c0x00000000-cc-rp-mo",
+    rating: 5,
+    relative_time_description: "3 months ago",
+    text: "I went for two days to Lisbon on a business trip and walked past Telo Studio. I was looking for a place to train in Lisbon in my stay and I couldn't be happier. Highly recommend this guys ! See you sooon ✨",
+    time: 1700308368,
+    translated: false,
+  },
+  {
+    author_name: "Manuela Luz",
+    author_url:
+      "https://www.google.com/maps/contrib/110132609227971670958/reviews",
+    language: "en",
+    original_language: "en",
+    profile_photo_url:
+      "https://lh3.googleusercontent.com/a-/ALV-UjXU0XGb4CwejTfwmt3vN5CtcJb0qgn51nAf7H_ehvGjB0Q=s128-c0x00000000-cc-rp-mo",
+    rating: 5,
+    relative_time_description: "4 months ago",
+    text: "I recently had an osteopathy session at TĒLO and I can honestly say it was a fantastic experience. The osteopath was not only highly skilled but also extremely empathetic and attentive. They took the time to thoroughly assess my issues and explained the treatment plan in detail, making me feel comfortable and informed.",
+    time: 1698433430,
+    translated: false,
+  },
+  {
+    author_name: "John Youden",
+    author_url:
+      "https://www.google.com/maps/contrib/114413764843608898540/reviews",
+    language: "en",
+    original_language: "en",
+    profile_photo_url:
+      "https://lh3.googleusercontent.com/a/ACg8ocIVFbrUr-uqOipL0pZc8ZHd3CkmyoIg0tJZ6G4ied30=s128-c0x00000000-cc-rp-mo",
+    rating: 5,
+    relative_time_description: "3 months ago",
+    text: "What Fabio does, for us lay people, can seem like magic. Somehow he knows what is ailing us, how it can be fixed, and then he proceeds to do just that, fix us. It comes from his deep understanding of how the body works, gathered from years of study and practice. That said, there’s still a little bit of magic happening there as well! Maestro!",
+    time: 1698786927,
+    translated: false,
+  },
+];
