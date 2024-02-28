@@ -77,9 +77,9 @@ export const Slideshow: React.FC = () => {
           >
             <div className="overflow-hidden rounded-md w-[14dvh] lg:w-[240px] aspect-[3/5] relative shadow">
               <Image
-                loading={i > 5 ? "lazy" : undefined}
-                priority={i <= 5}
-                placeholder={i <= 5 ? "blur" : "empty"}
+                loading={i > 10 ? "lazy" : undefined}
+                priority={i <= 10}
+                placeholder={i <= 10 ? "blur" : "empty"}
                 src={src}
                 alt={alt}
                 className="h-fit w-fit object-cover"
