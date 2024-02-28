@@ -31,7 +31,10 @@ async function getReviews(): Promise<typeof staticReviews> {
         return staticReviews;
       });
 
-    return response.result.reviews;
+    if (response?.result?.reviews) {
+      return response.result.reviews;
+    }
+    return staticReviews;
   }
 
   return Promise.resolve(staticReviews);
