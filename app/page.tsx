@@ -63,7 +63,7 @@ export default async function Home() {
           <h1 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings leading-none">
             Personal Trainer and Osteopath
           </h1>
-          <p className="text-muted-foreground text-xl lg:text-2xl tracking-tight">
+          <p className="text-muted-foreground text-balance lg:text-2xl tracking-tight">
             Ready to take your fitness to the next level?
           </p>
           <Button asChild size="lg">

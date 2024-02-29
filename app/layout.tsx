@@ -25,7 +25,7 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://torrestraining.pt"),
   title: "Torres Training",
-  description: "by Fabio Torres, Certified Personal Trainer & Osteopath",
+  description: "by Fabio Torres, Personal Trainer & Osteopath",
   keywords: [
     "Lisbon",
     "Personal",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Torres Training",
-    description: "by Fabio Torres, Certified Personal Trainer & Osteopath",
+    description: "by Fabio Torres, Personal Trainer & Osteopath",
     url: new URL("https://torrestraining.pt"),
     siteName: "Torres Training",
     locale: "en-US",
