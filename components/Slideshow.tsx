@@ -83,6 +83,7 @@ export const Slideshow: React.FC = () => {
                 src={src}
                 alt={alt}
                 className="h-fit w-fit object-cover"
+                fill
               />
             </div>
           </motion.figure>
