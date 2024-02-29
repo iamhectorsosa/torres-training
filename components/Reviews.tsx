@@ -104,7 +104,7 @@ export const Reviews: React.FC<{
                   </svg>
                 ))}
               </div>
-              <p className="lg:text-lg leading-relaxed">
+              <p className="lg:text-lg leading-relaxed line-clamp-6">
                 {review.text.text}
               </p>
               <div className="flex items-center gap-x-2">

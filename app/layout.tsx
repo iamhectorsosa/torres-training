@@ -10,6 +10,7 @@ import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { Providers } from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/react";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const fontHeadings = FontHeadings({
   subsets: ["latin"],
@@ -77,6 +78,7 @@ export default function RootLayout({
               {children}
               <Analytics />
             </div>
+            <ScrollToTop />
           </main>
           <footer className="bg-secondary px-6 pt-12 pb-24 mt-auto sticky bottom-0">
             <Footer navLinks={navLinks} contactLinks={contactLinks} />

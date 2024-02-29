@@ -14,7 +14,7 @@ export const Scroll: React.FC = () => {
         y: 0,
       }}
       transition={{
-        delay: 0.5,
+        delay: 1.2,
         duration: 0.6,
       }}
     >
