@@ -78,7 +78,7 @@ export default function RootLayout({
               <Analytics />
             </div>
           </main>
-          <footer className="bg-secondary px-6 pt-9 pb-20 mt-auto sticky bottom-0">
+          <footer className="bg-secondary px-6 pt-12 pb-24 mt-auto sticky bottom-0">
             <Footer navLinks={navLinks} contactLinks={contactLinks} />
           </footer>
         </Providers>

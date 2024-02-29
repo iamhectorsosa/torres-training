@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Link } from "./ui/link";
 
 export const Scroll: React.FC = () => {
   return (
@@ -15,16 +14,13 @@ export const Scroll: React.FC = () => {
         y: 0,
       }}
       transition={{
-        delay: 1.5,
+        delay: 0.5,
         duration: 0.6,
       }}
     >
-      <Link
-        className="uppercase font-medium tracking-wide text-xs dark:text-primary text-muted-foreground decoration-muted-foreground dark:decoration-primary opacity-80"
-        href="#me"
-      >
+      <span className="uppercase font-medium tracking-wide text-xs dark:text-primary text-muted-foreground opacity-80">
         Scroll down for more
-      </Link>
+      </span>
     </motion.span>
   );
 };

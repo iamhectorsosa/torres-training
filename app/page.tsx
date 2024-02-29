@@ -56,11 +56,11 @@ export default async function Home() {
   const { reviews } = await getReviews();
 
   return (
-    <div>
-      <section className="h-[95dvh] flex flex-col items-center justify-center gap-y-8 lg:gap-y-16 lg:py-32">
-        <FadeIn className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center">
+    <div className="space-y-32 py-[6dvh]">
+      <section className="flex flex-col items-center justify-center gap-y-8">
+        <FadeIn className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center h-[60dvh]">
           <Highlight>Torres Training</Highlight>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-headings">
+          <h1 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings leading-none">
             Personal Trainer and Osteopath
           </h1>
           <p className="text-muted-foreground text-xl lg:text-2xl tracking-tight">
@@ -69,15 +69,15 @@ export default async function Home() {
           <Button asChild size="lg">
             <Link href="#me">Start your journey</Link>
           </Button>
+          <Scroll />
         </FadeIn>
         <FadeIn className="flex items-center justify-center flex-col gap-y-6">
           <Slideshow />
-          <Scroll />
         </FadeIn>
       </section>
       <section
         id="me"
-        className="flex flex-col gap-y-4 justify-center items-center max-w-3xl mx-auto scroll-mt-24"
+        className="flex flex-col gap-y-8 justify-center items-center max-w-3xl mx-auto scroll-mt-24"
       >
         <InView>
           <Image
@@ -102,38 +102,40 @@ export default async function Home() {
               wheight loss and muscle gain, to improved athletic performance,
               functional rehabilitation and overall fitness.
             </p>
+          </div>
+        </InView>
+        <InView>
+          <div className="flex flex-col gap-y-8 justify-center items-center text-center">
             <p className="text-muted-foreground lg:text-lg tracking-tight leading-relaxed">
               Here are some of the accreditations from the institutes that
               support my work:
             </p>
-          </div>
-        </InView>
-        <InView>
-          <div className="max-w-xs sm:max-w-xl mx-auto pt-6">
-            <Image
-              className="dark:hidden hidden sm:block"
-              src={logos}
-              alt="Fabio Torres Accreditations"
-            />
-            <Image
-              className="dark:hidden sm:hidden"
-              src={logosMobile}
-              alt="Fabio Torres Accreditations"
-            />
-            <Image
-              className="hidden dark:sm:block"
-              src={logosDark}
-              alt="Fabio Torres Accreditations"
-            />
-            <Image
-              className="hidden dark:block dark:sm:hidden"
-              src={logosDarkMobile}
-              alt="Fabio Torres Accreditations"
-            />
+            <div className="max-w-xs sm:max-w-xl mx-auto">
+              <Image
+                className="dark:hidden hidden sm:block"
+                src={logos}
+                alt="Fabio Torres Accreditations"
+              />
+              <Image
+                className="dark:hidden sm:hidden"
+                src={logosMobile}
+                alt="Fabio Torres Accreditations"
+              />
+              <Image
+                className="hidden dark:sm:block"
+                src={logosDark}
+                alt="Fabio Torres Accreditations"
+              />
+              <Image
+                className="hidden dark:block dark:sm:hidden"
+                src={logosDarkMobile}
+                alt="Fabio Torres Accreditations"
+              />
+            </div>
           </div>
         </InView>
       </section>
-      <section className="flex flex-col gap-y-16 justify-center items-center pt-24 lg:pt-32">
+      <section className="flex flex-col gap-y-16 justify-center items-center">
         <InView>
           <div className="flex flex-col gap-y-4 max-w-3xl items-center">
             <div className="flex flex-col gap-y-4 justify-center items-center text-center">
@@ -149,7 +151,9 @@ export default async function Home() {
                 endurance, or enhance overall wellness.
               </p>
             </div>
-            <Button>Learn more</Button>
+            <Button asChild>
+              <Link href="https://wa.me/351961379705">Learn more</Link>
+            </Button>
           </div>
         </InView>
         <InView>
@@ -167,11 +171,13 @@ export default async function Home() {
                 develop optimal body control.
               </p>
             </div>
-            <Button>Learn more</Button>
+            <Button asChild>
+              <Link href="https://wa.me/351961379705">Learn more</Link>
+            </Button>
           </div>
         </InView>
       </section>
-      <section className="flex gap-y-4 flex-col justify-center items-center pt-24 lg:pt-32 pb-24">
+      <section className="flex gap-y-4 flex-col justify-center items-center">
         <InView>
           <div className="flex gap-y-4 flex-col justify-center items-center text-center max-w-3xl">
             <Highlight>Reviews</Highlight>

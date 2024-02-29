@@ -75,7 +75,7 @@ export const Slideshow: React.FC = () => {
             key={i}
             className="shrink-0"
           >
-            <div className="overflow-hidden rounded-md w-[14dvh] lg:w-[240px] aspect-[3/5] relative shadow">
+            <div className="overflow-hidden rounded-md w-[66dvw] xs:w-[240px] lg:w-[320px] aspect-[3/5] lg:aspect-[3/4] relative shadow">
               <Image
                 loading={i > 10 ? "lazy" : undefined}
                 priority={i <= 10}
@@ -83,7 +83,6 @@ export const Slideshow: React.FC = () => {
                 src={src}
                 alt={alt}
                 className="h-fit w-fit object-cover"
-                fill
               />
             </div>
           </motion.figure>
