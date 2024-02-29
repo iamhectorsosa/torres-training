@@ -59,7 +59,7 @@ export const Slideshow: React.FC = () => {
             opacity: 1,
             y: 0,
             transition: {
-              delayChildren: 0.2,
+              delayChildren: 0.5,
               staggerChildren: 0.25,
             },
           },

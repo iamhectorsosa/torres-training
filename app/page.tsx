@@ -135,7 +135,7 @@ export default async function Home() {
       <section className="flex flex-col gap-y-16 justify-center items-center">
         <InView className="flex flex-col gap-y-4 max-w-3xl items-center">
           <div className="flex flex-col gap-y-4 justify-center items-center text-center">
-            <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-15 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
+            <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
               01
             </h1>
             <Highlight>Personal Training</Highlight>
@@ -156,7 +156,7 @@ export default async function Home() {
         </InView>
         <InView className="flex flex-col gap-y-4 max-w-3xl items-center relative">
           <div className="flex flex-col gap-y-4 justify-center items-center text-center">
-            <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-15 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
+            <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
               02
             </h1>
             <Highlight>RFC Mobility Training</Highlight>
