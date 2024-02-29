@@ -6,6 +6,7 @@ import {} from "fs";
 
 const envVariables = z.object({
   GOOGLE_MAPS_PLACE_ID: z.string(),
+  GOOGLE_MAPS_PLACE_ID_PERSONAL: z.string(),
   GOOGLE_MAPS_KEY: z.string(),
 });
 

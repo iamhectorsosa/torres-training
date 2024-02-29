@@ -14,27 +14,39 @@ import { Scroll } from "@/components/Scroll";
 import { Reviews } from "@/components/Reviews";
 
 async function getReviews(): Promise<typeof staticReviews> {
-  if (process.env.NODE_ENV === "production") {
-    const response = await fetch(
-      `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`,
-      {
-        next: { revalidate: 86400 },
-      }
-    )
-      .then((data) => data.json())
-      .catch((error) => {
-        if (error instanceof Error) {
-          console.error(error);
-        } else {
-          console.error("Unknown error fetching reviews");
-        }
-        return staticReviews;
-      });
+  if (process.env.NODE_ENV !== "production") {
+    try {
+      const url1 = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
+      const url2 = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID_PERSONAL}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
 
-    if (response?.reviews) {
-      return response;
+      const [response1, response2] = await Promise.all([
+        fetch(url1, { next: { revalidate: 86400 } }).then((data) =>
+          data.json()
+        ),
+        fetch(url2, { next: { revalidate: 86400 } }).then((data) =>
+          data.json()
+        ),
+      ]);
+
+      if (response1?.reviews && response2?.reviews) {
+        const mergedResponse = {
+          reviews: [...response1.reviews, ...response2.reviews],
+          userRatingCount:
+            response1.userRatingCount + response2.userRatingCount,
+          rating: (response1.rating + response2.rating) / 2,
+        };
+        return mergedResponse;
+      } else {
+        return staticReviews;
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error);
+        return staticReviews;
+      }
+      console.error("Unknown error fetching reviews");
+      return staticReviews;
     }
-    return staticReviews;
   }
 
   return Promise.resolve(staticReviews);
@@ -46,7 +58,7 @@ export default async function Home() {
   return (
     <div>
       <section className="h-[95dvh] flex flex-col items-center justify-center gap-y-8 lg:gap-y-16 lg:py-32">
-        <FadeIn className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center lg:mt-auto">
+        <FadeIn className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center">
           <Highlight>Torres Training</Highlight>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-headings">
             Personal Trainer and Osteopath
@@ -121,10 +133,10 @@ export default async function Home() {
           </div>
         </InView>
       </section>
-      <section className="flex flex-col gap-y-4 justify-center items-center pt-24 lg:pt-32">
+      <section className="flex flex-col gap-y-16 justify-center items-center pt-24 lg:pt-32">
         <InView>
-          <div className="flex flex-col gap-y-4 max-w-3xl">
-            <div className="flex flex-col gap-y-4">
+          <div className="flex flex-col gap-y-4 max-w-3xl items-center">
+            <div className="flex flex-col gap-y-4 justify-center items-center text-center">
               <Highlight>Personal Training</Highlight>
               <h1 className="text-lg lg:text-2xl font-headings">
                 Are you ready to embark on a journey to transform your health
@@ -141,8 +153,8 @@ export default async function Home() {
           </div>
         </InView>
         <InView>
-          <div className="flex flex-col items-end gap-y-4 max-w-3xl">
-            <div className="flex flex-col items-end gap-y-4 text-right">
+          <div className="flex flex-col gap-y-4 max-w-3xl items-center">
+            <div className="flex flex-col gap-y-4 justify-center items-center text-center">
               <Highlight>RFC Mobility Training</Highlight>
               <h1 className="text-lg lg:text-2xl font-headings">
                 Mobility is the Foundation to Healthy joints

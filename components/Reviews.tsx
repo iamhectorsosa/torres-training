@@ -105,7 +105,7 @@ export const Reviews: React.FC<{
                 ))}
               </div>
               <p className="lg:text-lg leading-relaxed">
-                {review.originalText.text}
+                {review.text.text}
               </p>
               <div className="flex items-center gap-x-2">
                 <Avatar>
