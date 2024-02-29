@@ -70,9 +70,9 @@ export default async function Home() {
           </Button>
           <Scroll />
         </InView>
-        <InView className="flex items-center justify-center flex-col gap-y-6">
+        <div className="flex items-center justify-center flex-col gap-y-6">
           <Slideshow />
-        </InView>
+        </div>
       </section>
       <section
         id="me"
