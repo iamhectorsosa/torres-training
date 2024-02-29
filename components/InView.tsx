@@ -2,14 +2,14 @@
 
 import * as React from "react";
 import { useInView } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export const InView: React.FC<
-  React.PropsWithChildren & { amount?: "all" | "some" }
-> = ({ children, amount = "all" }) => {
+  React.PropsWithChildren & { className?: string }
+> = ({ className, children }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, {
-    margin: "120px 0px 0px",
-    amount,
+    margin: "0px 0px -180px",
     once: true,
   });
 
@@ -19,8 +19,9 @@ export const InView: React.FC<
         style={{
           transform: isInView ? "none" : "translateY(20px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.25s",
+          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.25s",
         }}
+        className={cn(className)}
       >
         {children}
       </div>
