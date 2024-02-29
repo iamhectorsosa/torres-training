@@ -14,7 +14,7 @@ import { Scroll } from "@/components/Scroll";
 import { Reviews } from "@/components/Reviews";
 
 async function getReviews(): Promise<typeof staticReviews> {
-  if (process.env.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV === "production") {
     try {
       const url1 = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
       const url2 = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID_PERSONAL}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
