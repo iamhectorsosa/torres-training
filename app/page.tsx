@@ -95,7 +95,7 @@ export default async function Home() {
               I am dedicated to helping individuals of all fitness levels
               achieve their health and wellness goals
             </h1>
-            <p className="text-muted-foreground lg:text-lg tracking-tight leading-relaxed">
+            <p className="text-muted-foreground lg:text-lg tracking-tight lg:leading-loose leading-loose">
               Over the last decade in Lisbon, Portugal, I&apos;ve successfully
               helped numerous clients achieve their fitness goals, ranging from
               wheight loss and muscle gain, to improved athletic performance,
@@ -104,7 +104,7 @@ export default async function Home() {
           </div>
         </InView>
         <InView className="flex flex-col gap-y-8 justify-center items-center text-center">
-          <p className="text-muted-foreground lg:text-lg tracking-tight leading-relaxed">
+          <p className="text-muted-foreground lg:text-lg tracking-tight">
             Here are some of the accreditations from the institutes that support
             my work:
           </p>
@@ -135,15 +135,17 @@ export default async function Home() {
       <section className="flex flex-col gap-y-16 justify-center items-center">
         <InView className="flex flex-col gap-y-4 max-w-3xl items-center">
           <div className="flex flex-col gap-y-4 justify-center items-center text-center">
-            <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
-              01
-            </h1>
-            <Highlight>Personal Training</Highlight>
+            <div className="flex flex-col gap-y-1.5">
+              <span className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
+                01
+              </span>
+              <Highlight>Personal Training</Highlight>
+            </div>
             <h1 className="text-lg lg:text-2xl font-headings">
               Are you ready to embark on a journey to transform your health and
               fitness? Look no further!
             </h1>
-            <p className="text-muted-foreground lg:text-lg tracking-tight leading-relaxed">
+            <p className="text-muted-foreground lg:text-lg tracking-tight lg:leading-loose leading-loose">
               My personal training program offers tailored 1-1 sessions and
               expert guidance to help you achieve your goals, whether
               you&apos;re aiming to lose weight, build muscle, improve
@@ -156,14 +158,16 @@ export default async function Home() {
         </InView>
         <InView className="flex flex-col gap-y-4 max-w-3xl items-center relative">
           <div className="flex flex-col gap-y-4 justify-center items-center text-center">
-            <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
-              02
-            </h1>
-            <Highlight>RFC Mobility Training</Highlight>
+            <div className="flex flex-col gap-y-1.5">
+              <span className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
+                02
+              </span>
+              <Highlight>RFC Mobility Training</Highlight>
+            </div>
             <h1 className="text-lg lg:text-2xl font-headings">
               Mobility is the Foundation to Healthy joints
             </h1>
-            <p className="text-muted-foreground lg:text-lg tracking-tight leading-relaxed">
+            <p className="text-muted-foreground lg:text-lg tracking-tight lg:leading-loose leading-loose">
               This is the most comprehensive mobility training system in the
               world that goes beyond traditional stretching routines and
               flexibility methods. FRC not only expands range of motion and

@@ -19,7 +19,7 @@ export const Footer: React.FC<{
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
-                className="block text-secondary-foreground decoration-secondary-foreground text-sm font-medium"
+                className="block text-secondary-foreground decoration-secondary-foreground"
                 href={href}
               >
                 {label}
@@ -28,14 +28,14 @@ export const Footer: React.FC<{
           </div>
         </div>
         <div className="space-y-2.5 lg:text-right">
-          <h2 className="text-sm text-secondary-foreground uppercase font-semibold tracking-wide">
+          <h2 className=" text-secondary-foreground uppercase font-semibold tracking-wide">
             Contact
           </h2>
           <div className="gap-y-2 flex flex-col lg:items-end">
             {contactLinks.map(({ href, label }) => (
               <Link
                 key={href}
-                className="block text-secondary-foreground decoration-secondary-foreground text-sm font-medium"
+                className="block text-secondary-foreground decoration-secondary-foreground"
                 href={href}
               >
                 {label}

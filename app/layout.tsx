@@ -63,7 +63,7 @@ export default function RootLayout({
       >
         <Providers>
           <main className="z-10 bg-background">
-            <div className="px-6 sticky top-0 pt-8 z-30 bg-background/80 backdrop-blur-lg w-full">
+            <div className="px-6 sticky top-0 pt-8 pb-4 z-30 bg-background/80 backdrop-blur-lg w-full">
               <nav className="flex max-w-7xl mx-auto justify-between items-center">
                 <Link
                   href="/"
@@ -80,7 +80,7 @@ export default function RootLayout({
             </div>
             <ScrollToTop />
           </main>
-          <footer className="bg-secondary px-6 pt-12 pb-24 mt-auto sticky bottom-0">
+          <footer className="bg-secondary px-6 pt-12 pb-24 mt-auto lg:sticky lg:bottom-0">
             <Footer navLinks={navLinks} contactLinks={contactLinks} />
           </footer>
         </Providers>

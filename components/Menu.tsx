@@ -106,7 +106,7 @@ export const Menu: React.FC<{
               ))}
             </div>
           </div>
-          <div className="lg:h-full h-[40%] w-full relative">
+          <div className="lg:h-full h-[32%] w-full relative">
             <Image
               placeholder="blur"
               priority

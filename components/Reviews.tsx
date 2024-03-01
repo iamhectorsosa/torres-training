@@ -104,7 +104,7 @@ export const Reviews: React.FC<{
                   </svg>
                 ))}
               </div>
-              <p className="lg:text-lg leading-relaxed line-clamp-6">
+              <p className="lg:text-lg leading-loose lg:leading-loose line-clamp-6">
                 {review.text.text}
               </p>
               <div className="flex items-center gap-x-2">
@@ -121,7 +121,7 @@ export const Reviews: React.FC<{
                   </AvatarFallback>
                 </Avatar>
                 <span>{review.authorAttribution.displayName}</span>
-                <span className="ml-auto text-sm">
+                <span className="ml-auto">
                   {review.relativePublishTimeDescription}
                 </span>
               </div>
