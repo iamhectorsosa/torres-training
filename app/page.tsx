@@ -62,7 +62,7 @@ export default async function Home() {
           <h1 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings leading-none">
             Personal Trainer and Osteopath
           </h1>
-          <p className="text-muted-foreground text-balance lg:text-2xl tracking-tight">
+          <p className="text-muted-foreground text-balance  lg:text-2xl tracking-tight">
             Ready to take your fitness to the next level?
           </p>
           <Button asChild size="lg">
@@ -96,8 +96,8 @@ export default async function Home() {
             <p className="text-muted-foreground lg:text-lg tracking-tight lg:leading-loose leading-loose">
               Over the last decade in Lisbon, Portugal, I&apos;ve successfully
               helped numerous clients achieve their fitness goals, ranging from
-              wheight loss and muscle gain, to improved athletic performance,
-              functional rehabilitation and overall fitness.
+              weight loss and muscle gain, to improved athletic performance,
+              functional rehabilitation, and overall fitness.
             </p>
           </div>
         </InView>
@@ -131,10 +131,10 @@ export default async function Home() {
         </InView>
       </section>
       <section className="flex flex-col gap-y-16 justify-center items-center">
-        <InView className="flex flex-col gap-y-4 max-w-3xl items-center">
-          <div className="flex flex-col gap-y-4 justify-center items-center text-center">
+        <InView className="flex flex-col gap-y-4 max-w-3xl text-center items-center">
+          <div className="flex flex-col gap-y-4 justify-center items-center">
             <div className="flex flex-col gap-y-1.5">
-              <span className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
+              <span className="text-4xl lg:text-6xl font-bold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
                 01
               </span>
               <Highlight>Personal Training</Highlight>
@@ -154,10 +154,10 @@ export default async function Home() {
             <Link href="https://wa.me/351961379705">Learn more</Link>
           </Button>
         </InView>
-        <InView className="flex flex-col gap-y-4 max-w-3xl items-center relative">
-          <div className="flex flex-col gap-y-4 justify-center items-center text-center">
+        <InView className="flex flex-col gap-y-4 max-w-3xl text-center items-center">
+          <div className="flex flex-col gap-y-4 justify-center items-center">
             <div className="flex flex-col gap-y-1.5">
-              <span className="text-4xl lg:text-6xl font-extrabold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
+              <span className="text-4xl lg:text-6xl font-bold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
                 02
               </span>
               <Highlight>RFC Mobility Training</Highlight>
