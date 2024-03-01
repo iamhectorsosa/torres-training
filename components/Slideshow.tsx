@@ -82,8 +82,8 @@ export const Slideshow: React.FC = () => {
                 placeholder={i <= 10 ? "blur" : "empty"}
                 src={src}
                 alt={alt}
-                className="h-fit w-fit object-cover"
-                fill
+                className="h-full w-full object-cover"
+                width={320}
               />
             </div>
           </motion.figure>

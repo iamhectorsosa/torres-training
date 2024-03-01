@@ -112,7 +112,7 @@ export const Menu: React.FC<{
               priority
               alt="Fabio Torres"
               src={IMG_9263_2}
-              fill
+              width={1024}
               className="object-cover object-center h-full w-full pointer-events-none hidden lg:block"
             />
             <Image
@@ -120,7 +120,7 @@ export const Menu: React.FC<{
               priority
               alt="Fabio Torres"
               src={IMG_9228_2}
-              fill
+              width={1024}
               className="object-cover object-center h-full w-full pointer-events-none block lg:hidden"
             />
           </div>
