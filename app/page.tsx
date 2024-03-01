@@ -79,17 +79,15 @@ export default async function Home() {
         className="flex flex-col gap-y-8 justify-center items-center max-w-3xl mx-auto scroll-mt-24"
       >
         <InView>
-          <Image
-            placeholder="blur"
-            priority
-            src={IMG_9211}
-            alt={"Fabio Torres"}
-            className="h-[240px] w-[240px] aspect-square rounded-full shadow object-cover object-top"
-            sizes="240px"
-          />
-        </InView>
-        <InView>
           <div className="flex flex-col gap-y-4 justify-center items-center text-center">
+            <Image
+              placeholder="blur"
+              priority
+              src={IMG_9211}
+              alt={"Fabio Torres"}
+              className="h-[240px] w-[240px] aspect-square rounded-full shadow object-cover object-top"
+              sizes="240px"
+            />
             <Highlight>Fabio Torres</Highlight>
             <h1 className="text-xl lg:text-3xl font-headings">
               I am dedicated to helping individuals of all fitness levels
