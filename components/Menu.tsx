@@ -3,7 +3,12 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import IMG_9263_2 from "../public/images/IMG_9263_2.jpg";
@@ -13,10 +18,11 @@ export const Menu: React.FC<{
   navLinks: { href: string; label: string }[];
   contactLinks: { href: string; label: string }[];
 }> = ({ navLinks, contactLinks }) => {
+  const triggerRef = React.useRef<HTMLButtonElement | null>(null);
   return (
     <Drawer direction="top">
       <DrawerTrigger asChild>
-        <Button variant="ghost" className="uppercase">
+        <Button ref={triggerRef} variant="ghost" className="uppercase">
           Menu
         </Button>
       </DrawerTrigger>
@@ -27,11 +33,11 @@ export const Menu: React.FC<{
               <Link className="uppercase font-bold tracking-wide leading-none hover:no-underline">
                 Torres Training
               </Link>
-              <DrawerTrigger asChild>
-                <Button variant="ghost" className="uppercase">
+              <DrawerClose asChild>
+                <Button ref={triggerRef} variant="ghost" className="uppercase">
                   Close
                 </Button>
-              </DrawerTrigger>
+              </DrawerClose>
             </div>
             <motion.div
               initial="hidden"
@@ -51,6 +57,9 @@ export const Menu: React.FC<{
             >
               {navLinks.map(({ href, label }) => (
                 <motion.div
+                  onClick={() => {
+                    triggerRef.current?.click();
+                  }}
                   key={href}
                   variants={{
                     hidden: { opacity: 0 },
@@ -106,7 +115,7 @@ export const Menu: React.FC<{
               ))}
             </div>
           </div>
-          <div className="lg:h-full h-[32%] w-full relative">
+          <div className="lg:h-full h-[30%] w-full relative">
             <Image
               placeholder="blur"
               priority

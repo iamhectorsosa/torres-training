@@ -9,7 +9,6 @@ import { Link } from "@/components/ui/link";
 import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { Providers } from "@/components/Providers";
-import { Analytics } from "@vercel/analytics/react";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
 const fontHeadings = FontHeadings({
@@ -76,7 +75,6 @@ export default function RootLayout({
             </div>
             <div className="px-6">
               {children}
-              <Analytics />
             </div>
             <ScrollToTop />
           </main>
@@ -100,7 +98,7 @@ const navLinks = [
   },
   {
     label: "Contact",
-    href: "https://wa.me/351961379705",
+    href: "/contact",
   },
 ];
 
