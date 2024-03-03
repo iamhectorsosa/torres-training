@@ -4,60 +4,40 @@ import { InView } from "@/components/InView";
 import Image from "next/image";
 import Link from "next/link";
 import IMG_9211 from "../public/images/IMG_9211.jpg";
-import logos from "../public/logos.svg";
-import logosDark from "../public/logos-dark.svg";
-import logosMobile from "../public/logos-mobile.svg";
-import logosDarkMobile from "../public/logos-dark-mobile.svg";
 import { Highlight } from "@/components/Highlight";
 import { Scroll } from "@/components/Scroll";
 import { Reviews } from "@/components/Reviews";
+import { Certifications } from "@/components/Certifications";
 
 async function getReviews(): Promise<typeof staticReviews> {
-  if (process.env.NODE_ENV === "production") {
-    try {
-      const url1 = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
-      const url2 = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID_PERSONAL}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
+  if (process.env.NODE_ENV !== "production") return staticReviews;
 
-      const [response1, response2] = await Promise.all([
-        fetch(url1, { next: { revalidate: 86400 } }).then((data) =>
-          data.json()
-        ),
-        fetch(url2, { next: { revalidate: 86400 } }).then((data) =>
-          data.json()
-        ),
-      ]);
+  try {
+    const url = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
+    const response = await fetch(url, { next: { revalidate: 86400 } }).then(
+      (res) => res.json()
+    );
 
-      if (response1?.reviews && response2?.reviews) {
-        const mergedResponse = {
-          reviews: [...response1.reviews, ...response2.reviews],
-          userRatingCount:
-            response1.userRatingCount + response2.userRatingCount,
-          rating: (response1.rating + response2.rating) / 2,
-        };
-        return mergedResponse;
-      } else {
-        return staticReviews;
-      }
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error(error);
-        return staticReviews;
-      }
-      console.error("Unknown error fetching reviews");
-      return staticReviews;
+    const { reviews, userRatingCount, rating } = response;
+    if (reviews && userRatingCount && rating) {
+      return { reviews, userRatingCount, rating };
     }
+  } catch (error) {
+    console.error(
+      error instanceof Error ? error : "Unknown error fetching reviews"
+    );
   }
 
-  return Promise.resolve(staticReviews);
+  return staticReviews;
 }
 
 export default async function Home() {
   const { reviews } = await getReviews();
 
   return (
-    <div className="space-y-32 py-[6dvh]">
-      <section className="flex flex-col items-center justify-center gap-y-8">
-        <InView className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center h-[60dvh]">
+    <div className="gap-y-32 flex flex-col w-full *:px-6 py-[6dvh]">
+      <section className="flex flex-col items-center justify-center gap-y-8 !px-0">
+        <InView className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center h-[60dvh] px-6">
           <Highlight>Torres Training</Highlight>
           <h1 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings leading-none">
             Personal Trainer and Osteopath
@@ -70,15 +50,15 @@ export default async function Home() {
           </Button>
           <Scroll />
         </InView>
-        <div className="flex items-center justify-center flex-col gap-y-6">
+        <InView className="flex items-center justify-center flex-col gap-y-6">
           <Slideshow />
-        </div>
+        </InView>
       </section>
       <section
         id="me"
-        className="flex flex-col gap-y-8 justify-center items-center max-w-3xl mx-auto scroll-mt-24"
+        className="flex flex-col gap-y-8 justify-center items-center scroll-mt-24 !px-0"
       >
-        <InView>
+        <InView className="max-w-3xl mx-auto px-6">
           <div className="flex flex-col gap-y-4 justify-center items-center text-center">
             <Image
               placeholder="blur"
@@ -101,33 +81,8 @@ export default async function Home() {
             </p>
           </div>
         </InView>
-        <InView className="flex flex-col gap-y-8 justify-center items-center text-center">
-          <p className="text-muted-foreground lg:text-lg tracking-tight">
-            Here are some of the accreditations from the institutes that support
-            my work:
-          </p>
-          <div className="max-w-xs sm:max-w-xl mx-auto">
-            <Image
-              className="dark:hidden hidden sm:block"
-              src={logos}
-              alt="Fabio Torres Accreditations"
-            />
-            <Image
-              className="dark:hidden sm:hidden"
-              src={logosMobile}
-              alt="Fabio Torres Accreditations"
-            />
-            <Image
-              className="hidden dark:sm:block"
-              src={logosDark}
-              alt="Fabio Torres Accreditations"
-            />
-            <Image
-              className="hidden dark:block dark:sm:hidden"
-              src={logosDarkMobile}
-              alt="Fabio Torres Accreditations"
-            />
-          </div>
+        <InView>
+          <Certifications />
         </InView>
       </section>
       <section className="flex flex-col gap-y-16 justify-center items-center">
@@ -178,15 +133,17 @@ export default async function Home() {
           </Button>
         </InView>
       </section>
-      <section className="flex gap-y-4 flex-col justify-center items-center">
-        <InView className="flex gap-y-4 flex-col justify-center items-center text-center max-w-3xl">
+      <section className="flex gap-y-4 flex-col justify-center items-center !px-0">
+        <InView className="flex gap-y-4 flex-col justify-center items-center text-center max-w-3xl px-6">
           <Highlight>Reviews</Highlight>
           <h1 className="text-xl lg:text-3xl font-headings">
             Commitment reflected in stories of those who share their experience
           </h1>
         </InView>
-        <InView className="flex flex-col gap-y-4 items-center">
+        <InView>
           <Reviews reviews={reviews} />
+        </InView>
+        <InView className="flex flex-col gap-y-4 items-center px-6">
           <Button size="lg" asChild>
             <Link href="https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7">
               More on Google Reviews
@@ -200,107 +157,87 @@ export default async function Home() {
 
 const staticReviews = {
   rating: 5,
-  userRatingCount: 30,
+  userRatingCount: 100,
   reviews: [
     {
-      name: "places/ChIJ5d1lhqIzGQ0RqL36wcBymyY/reviews/ChZDSUhNMG9nS0VJQ0FnSUNsc2F5MElnEAE",
-      relativePublishTimeDescription: "3 months ago",
+      name: "places/ChIJ65AwT1kzGQ0RMDHb_b8baMA/reviews/ChdDSUhNMG9nS0VJQ0FnSUM5ME5PbnR3RRAB",
+      relativePublishTimeDescription: "in the last week",
       rating: 5,
       text: {
-        text: "Great place to train with amazing staff; they also speak not only in Portuguese but English. And most important, they have a holistic vision between osteopathy and personalized training.",
+        text: "If you're looking for the best fitness guru, Fabio Torres is the real deal. He offers personalized training and osteopathy that's all custom made. His approach includes Functional Range Conditioning, which is a total game-changer by taking traditional stretching up a notch, enhancing your strength and flexibility. It's the support you need to surpass your fitness targets and take control of your body.",
         languageCode: "en",
       },
       originalText: {
-        text: "Great place to train with amazing staff; they also speak not only in Portuguese but English. And most important, they have a holistic vision between osteopathy and personalized training.",
+        text: "If you're looking for the best fitness guru, Fabio Torres is the real deal. He offers personalized training and osteopathy that's all custom made. His approach includes Functional Range Conditioning, which is a total game-changer by taking traditional stretching up a notch, enhancing your strength and flexibility. It's the support you need to surpass your fitness targets and take control of your body.",
         languageCode: "en",
       },
       authorAttribution: {
-        displayName: "Daniela Villalobos Torres",
-        uri: "https://www.google.com/maps/contrib/106329556966057521436/reviews",
+        displayName: "Jose Antonio Sosa Salgado",
+        uri: "https://www.google.com/maps/contrib/116263050331781336515/reviews",
         photoUri:
-          "https://lh3.googleusercontent.com/a/ACg8ocJn4LRiNRoXtG1Q6Ff4Tqb01LeUwFC-8V57vJNb20o9=s128-c0x00000000-cc-rp-mo",
+          "https://lh3.googleusercontent.com/a-/ALV-UjXloZWO9s3ueu1WsO0eKJNDdYWoiz4sUt6CXqUp60XnM0M=s128-c0x00000000-cc-rp-mo",
       },
-      publishTime: "2023-11-20T21:35:49Z",
+      publishTime: "2024-02-29T13:29:23Z",
     },
     {
-      name: "places/ChIJ5d1lhqIzGQ0RqL36wcBymyY/reviews/ChZDSUhNMG9nS0VJQ0FnSUNGeFlLSklnEAE",
-      relativePublishTimeDescription: "4 months ago",
+      name: "places/ChIJ65AwT1kzGQ0RMDHb_b8baMA/reviews/ChZDSUhNMG9nS0VJQ0FnSUM5a01HYVhREAE",
+      relativePublishTimeDescription: "in the last week",
       rating: 5,
       text: {
-        text: "I've been working with Fabio for the past year and I can highly recommend his services. He speak excellent English and extremely knowledgeable. Initially I came to him to get help with a hip impingment which he resolved quickly. After this I've been using him a a strength coach 3x week with very good progress. He's the best PT I've ever worked with.",
+        text: "Fabio Torres is the fitness coach you've been looking for. He's all about customizing his training and osteopathy to match exactly what you're after. And what really sets him apart is the Functional Range Conditioning (FRC). It's not your average stretching routine—it's a game-changer for building strength and flexibility. Jump into his program, and you'll not only crush your fitness goals but also experience a whole new level of movement for your body.",
         languageCode: "en",
       },
       originalText: {
-        text: "I've been working with Fabio for the past year and I can highly recommend his services. He speak excellent English and extremely knowledgeable. Initially I came to him to get help with a hip impingment which he resolved quickly. After this I've been using him a a strength coach 3x week with very good progress. He's the best PT I've ever worked with.",
+        text: "Fabio Torres is the fitness coach you've been looking for. He's all about customizing his training and osteopathy to match exactly what you're after. And what really sets him apart is the Functional Range Conditioning (FRC). It's not your average stretching routine—it's a game-changer for building strength and flexibility. Jump into his program, and you'll not only crush your fitness goals but also experience a whole new level of movement for your body.",
         languageCode: "en",
       },
       authorAttribution: {
-        displayName: "Victor Hansen",
-        uri: "https://www.google.com/maps/contrib/111537559485101205749/reviews",
+        displayName: "Kate Strelkova",
+        uri: "https://www.google.com/maps/contrib/106784705714508444010/reviews",
         photoUri:
-          "https://lh3.googleusercontent.com/a/ACg8ocKq2Htd0_QnmDxvyOAYSlUzn2dEsCVTrtEphoq_6zvxnw=s128-c0x00000000-cc-rp-mo",
+          "https://lh3.googleusercontent.com/a-/ALV-UjVprehhbSAafPHfzmcrM9bVkhEcZIcCTV3VYhhttBXcyqc=s128-c0x00000000-cc-rp-mo",
       },
-      publishTime: "2023-10-29T20:46:13Z",
+      publishTime: "2024-02-29T11:01:30Z",
     },
     {
-      name: "places/ChIJ5d1lhqIzGQ0RqL36wcBymyY/reviews/ChZDSUhNMG9nS0VJQ0FnSUNsanZ6eWNnEAE",
-      relativePublishTimeDescription: "3 months ago",
+      name: "places/ChIJ65AwT1kzGQ0RMDHb_b8baMA/reviews/ChZDSUhNMG9nS0VJQ0FnSURkdjVIV1lnEAE",
+      relativePublishTimeDescription: "in the last week",
       rating: 5,
       text: {
-        text: "I went for two days to Lisbon on a business trip and walked past Telo Studio. I was looking for a place to train in Lisbon in my stay and I couldn't be happier. Highly recommend this guys ! See you sooon ✨",
+        text: "Best PT I've ever had. I had trained several times with PTs in the past and I was never very satisfied - since I started training with Fábio, and going through postpartum with twins, I feel like I'm getting in my best physical shape ever. Super professional, dedicated and demanding. Couldn't recommend it more!",
         languageCode: "en",
       },
       originalText: {
-        text: "I went for two days to Lisbon on a business trip and walked past Telo Studio. I was looking for a place to train in Lisbon in my stay and I couldn't be happier. Highly recommend this guys ! See you sooon ✨",
-        languageCode: "en",
+        text: "Melhor PT que alguma vez tive. Já tinha treinado várias vezes com PTs no passado e nunca fiquei muito satisfeita - desde que comecei a treinar com o Fábio, e a passar por um pós parto de gémeos, sinto que estou a ficar na minha melhor forma física de sempre. Super profissional, dedicado e exigente. Não poderia recomendar mais!",
+        languageCode: "pt",
       },
       authorAttribution: {
-        displayName: "Basilio Paz",
-        uri: "https://www.google.com/maps/contrib/110461696352716876082/reviews",
+        displayName: "Joana Lemos",
+        uri: "https://www.google.com/maps/contrib/115167992060565229149/reviews",
         photoUri:
-          "https://lh3.googleusercontent.com/a-/ALV-UjVHszmV2adNOgW4DkF3_0SOH2LiMC1j2yS2FEh83t7K3RL5=s128-c0x00000000-cc-rp-mo",
+          "https://lh3.googleusercontent.com/a-/ALV-UjVhbA1B867anCPJQ9_6_OptbpPgG7wwH7MN0AQ_4Hr4XPM=s128-c0x00000000-cc-rp-mo",
       },
-      publishTime: "2023-11-18T11:52:48Z",
+      publishTime: "2024-02-28T23:29:20Z",
     },
     {
-      name: "places/ChIJ5d1lhqIzGQ0RqL36wcBymyY/reviews/ChZDSUhNMG9nS0VJQ0FnSUNGM1A3UUVREAE",
-      relativePublishTimeDescription: "4 months ago",
+      name: "places/ChIJ65AwT1kzGQ0RMDHb_b8baMA/reviews/ChdDSUhNMG9nS0VJQ0FnSUM5ME9PU3JBRRAB",
+      relativePublishTimeDescription: "in the last week",
       rating: 5,
       text: {
-        text: "I recently had an osteopathy session at TĒLO and I can honestly say it was a fantastic experience. The osteopath was not only highly skilled but also extremely empathetic and attentive. They took the time to thoroughly assess my issues and explained the treatment plan in detail, making me feel comfortable and informed.",
+        text: "Fabio 10/10 if you are looking for personalized training according to your needs Fabio has the magic touch, he designs everything with your goals in mind, you will improve your flexibility and strength like nothing else. It's the best way to achieve your fitness goals and keep your body feeling in peak condition.\nHighly recommended!!",
         languageCode: "en",
       },
       originalText: {
-        text: "I recently had an osteopathy session at TĒLO and I can honestly say it was a fantastic experience. The osteopath was not only highly skilled but also extremely empathetic and attentive. They took the time to thoroughly assess my issues and explained the treatment plan in detail, making me feel comfortable and informed.",
-        languageCode: "en",
+        text: "Fabio 10/10 si estás buscando un entrenamiento personalizado acorde a tus necesidades Fabio tiene el toque mágico, diseña todo teniendo en cuenta tus objetivos, mejorarás tu flexibilidad y fuerza como ninguna otra cosa. Es la mejor manera de alcanzar tus objetivos de acondicionamiento físico y hacer que tu cuerpo se sienta en óptimas condiciones.\nMuy recomendado!!",
+        languageCode: "es",
       },
       authorAttribution: {
-        displayName: "Manuela Luz",
-        uri: "https://www.google.com/maps/contrib/110132609227971670958/reviews",
+        displayName: "Rosa Zuniga",
+        uri: "https://www.google.com/maps/contrib/100580673820830687575/reviews",
         photoUri:
-          "https://lh3.googleusercontent.com/a-/ALV-UjXU0XGb4CwejTfwmt3vN5CtcJb0qgn51nAf7H_ehvGjB0Q=s128-c0x00000000-cc-rp-mo",
+          "https://lh3.googleusercontent.com/a-/ALV-UjXy_VTuBOyypP6V-c1y4CHvLDcxpM3cQKpoOTHgLM0Y1gk=s128-c0x00000000-cc-rp-mo",
       },
-      publishTime: "2023-10-27T19:03:50Z",
-    },
-    {
-      name: "places/ChIJ5d1lhqIzGQ0RqL36wcBymyY/reviews/ChdDSUhNMG9nS0VJQ0FnSUNGX2FUMjZ3RRAB",
-      relativePublishTimeDescription: "3 months ago",
-      rating: 5,
-      text: {
-        text: "What Fabio does, for us lay people, can seem like magic. Somehow he knows what is ailing us, how it can be fixed, and then he proceeds to do just that, fix us. It comes from his deep understanding of how the body works, gathered from years of study and practice. That said, there’s still a little bit of magic happening there as well! Maestro!",
-        languageCode: "en",
-      },
-      originalText: {
-        text: "What Fabio does, for us lay people, can seem like magic. Somehow he knows what is ailing us, how it can be fixed, and then he proceeds to do just that, fix us. It comes from his deep understanding of how the body works, gathered from years of study and practice. That said, there’s still a little bit of magic happening there as well! Maestro!",
-        languageCode: "en",
-      },
-      authorAttribution: {
-        displayName: "John Youden",
-        uri: "https://www.google.com/maps/contrib/114413764843608898540/reviews",
-        photoUri:
-          "https://lh3.googleusercontent.com/a/ACg8ocIVFbrUr-uqOipL0pZc8ZHd3CkmyoIg0tJZ6G4ied30=s128-c0x00000000-cc-rp-mo",
-      },
-      publishTime: "2023-10-31T21:15:27Z",
+      publishTime: "2024-02-29T13:27:10Z",
     },
   ],
 };

@@ -14,14 +14,14 @@ export const InView: React.FC<
   });
 
   return (
-    <div ref={ref}>
+    <div className="flex items-center justify-center w-full" ref={ref}>
       <div
         style={{
           transform: isInView ? "none" : "translateY(20px)",
           opacity: isInView ? 1 : 0,
           transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.25s",
         }}
-        className={cn(className)}
+        className={cn("w-full", className)}
       >
         {children}
       </div>

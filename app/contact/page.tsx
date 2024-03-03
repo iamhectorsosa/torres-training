@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default async function Contact() {
   return (
-    <section className="flex flex-col items-center justify-center gap-y-6 max-w-4xl mx-auto py-[6dvh] lg:py-32">
+    <section className="flex flex-col items-center justify-center gap-y-6 max-w-4xl mx-auto py-[6dvh] lg:py-32 px-6">
       <InView className="flex flex-col gap-y-4 justify-center items-center text-center">
         <Highlight>Contact</Highlight>
         <h1 className="text-xl lg:text-3xl font-headings">

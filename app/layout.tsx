@@ -73,9 +73,7 @@ export default function RootLayout({
                 <Menu navLinks={navLinks} contactLinks={contactLinks} />
               </nav>
             </div>
-            <div className="px-6">
-              {children}
-            </div>
+            {children}
             <ScrollToTop />
           </main>
           <footer className="bg-secondary px-6 pt-12 pb-24 mt-auto lg:sticky lg:bottom-0">

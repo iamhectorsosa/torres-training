@@ -30,9 +30,15 @@ export const Menu: React.FC<{
         <div className="flex lg:flex-row flex-col h-full justify-between">
           <div className="flex flex-col h-full w-full px-6 py-8">
             <div className="flex justify-between items-center">
-              <Link className="uppercase font-bold tracking-wide leading-none hover:no-underline">
-                Torres Training
-              </Link>
+              <div
+                onClick={() => {
+                  triggerRef.current?.click();
+                }}
+              >
+                <Link className="uppercase font-bold tracking-wide leading-none hover:no-underline">
+                  Torres Training
+                </Link>
+              </div>
               <DrawerClose asChild>
                 <Button ref={triggerRef} variant="ghost" className="uppercase">
                   Close
