@@ -24,13 +24,13 @@ export const ContactEmail = ({
   <Html>
     <Head />
     <Preview>
-      Welcome and thank you for reaching out to Torres Training!
+      Welcome and thank you for reaching out to Torres Training
     </Preview>
     <Body style={main}>
       <Container style={container}>
         <Text style={paragraph}>Hi {name},</Text>
         <Text style={paragraph}>
-          Welcome and thank you for reaching out to Torres Training!
+          Welcome and thank you for reaching out to Torres Training
         </Text>
         <Text style={paragraph}>
           {personal_training || mobility_training ? (
@@ -50,7 +50,7 @@ export const ContactEmail = ({
           </>
         )}
         <Text style={paragraph}>
-          We will reach out to you in the next few hours!
+          We will reach out to you shortly!
         </Text>
         <Text style={paragraph}>
           Best,

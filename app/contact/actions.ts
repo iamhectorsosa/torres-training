@@ -26,8 +26,8 @@ export async function formAction({
     const res = await resend.emails.send({
       from: "Fabio from Torres Training <noreply@torrestraining.pt>",
       to: emailList,
-      subject: `Hi ${name}! Your contact message was received!`,
-      text: "We will reach out to you in the next few hours!",
+      subject: `Hi ${name}! Your contact message was received`,
+      text: "We will reach out to you shortly",
       react: ContactEmail({
         name,
         personal_training,

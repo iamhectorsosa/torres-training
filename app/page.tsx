@@ -4,7 +4,6 @@ import { InView } from "@/components/InView";
 import Image from "next/image";
 import Link from "next/link";
 import IMG_9211 from "../public/images/IMG_9211.jpg";
-import { Highlight } from "@/components/Highlight";
 import { Scroll } from "@/components/Scroll";
 import { Reviews } from "@/components/Reviews";
 import { Certifications } from "@/components/Certifications";
@@ -35,14 +34,18 @@ export default async function Home() {
   const { reviews } = await getReviews();
 
   return (
-    <div className="gap-y-32 flex flex-col w-full *:px-6 py-[6dvh]">
-      <section className="flex flex-col items-center justify-center gap-y-6 !px-0">
-        <InView className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center h-[60dvh] px-6">
-          <Highlight>Torres Training</Highlight>
-          <h1 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings leading-none">
-            Personal Trainer and Osteopath
-          </h1>
-          <p className="text-muted-foreground text-balance  lg:text-2xl tracking-tight">
+    <div className="space-y-16 w-full">
+      <section className="space-y-4">
+        <InView className="flex flex-col gap-y-4 justify-center max-w-4xl h-[70dvh] px-6">
+          <div>
+            <h1 className="relative uppercase font-bold lg:text-xl tracking-wide">
+              Torres Training
+            </h1>
+            <h2 className="text-6xl lg:text-8xl font-headings uppercase font-medium leading-none text-balance">
+              Personal Trainer and Osteopath
+            </h2>
+          </div>
+          <p className="text-muted-foreground text-balance text-xl tracking-tight">
             Ready to take your fitness to the next level?
           </p>
           <Button asChild size="lg">
@@ -50,33 +53,29 @@ export default async function Home() {
           </Button>
           <Scroll />
         </InView>
-        <InView
-          margin={"0px"}
-          className="flex items-center justify-center flex-col gap-y-6"
-        >
+        <InView margin="0px">
           <Slideshow />
         </InView>
       </section>
-      <section
-        id="me"
-        className="flex flex-col gap-y-8 justify-center items-center scroll-mt-24 !px-0"
-      >
-        <InView className="max-w-3xl mx-auto px-6">
-          <div className="flex flex-col gap-y-4 justify-center items-center text-center">
-            <Image
-              placeholder="blur"
-              priority
-              src={IMG_9211}
-              alt={"Fabio Torres"}
-              className="h-[240px] w-[240px] aspect-square rounded-full shadow object-cover object-top"
-              sizes="240px"
-            />
-            <Highlight>Fabio Torres</Highlight>
-            <h1 className="text-xl lg:text-3xl font-headings">
+      <section id="me" className="scroll-mt-24 space-y-8">
+        <InView className="max-w-4xl mx-auto px-6 space-y-4">
+          <Image
+            placeholder="blur"
+            priority
+            src={IMG_9211}
+            alt={"Fabio Torres"}
+            className="h-[240px] w-[240px] aspect-square rounded-full shadow object-cover object-top"
+            sizes="240px"
+          />
+          <div className="space-y-4">
+            <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+              Fabio Torres
+            </h2>
+            <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
               I am dedicated to helping individuals of all fitness levels
               achieve their health and wellness goals
-            </h1>
-            <p className="text-muted-foreground lg:text-lg tracking-tight lg:leading-loose leading-loose">
+            </h3>
+            <p className="text-muted-foreground text-lg lg:text-xl leading-relaxed lg:leading-relaxed tracking-tight">
               Over the last decade in Lisbon, Portugal, I&apos;ve successfully
               helped numerous clients achieve their fitness goals, ranging from
               weight loss and muscle gain, to improved athletic performance,
@@ -88,70 +87,74 @@ export default async function Home() {
           <Certifications />
         </InView>
       </section>
-      <section className="flex flex-col gap-y-16 justify-center items-center">
-        <InView className="flex flex-col gap-y-4 max-w-3xl text-center items-center">
-          <div className="flex flex-col gap-y-4 justify-center items-center">
-            <div className="flex flex-col gap-y-1.5">
-              <span className="text-4xl lg:text-6xl font-bold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
-                01
-              </span>
-              <Highlight>Personal Training</Highlight>
-            </div>
-            <h1 className="text-lg lg:text-2xl font-headings">
-              Are you ready to embark on a journey to transform your health and
-              fitness? Look no further!
-            </h1>
-            <p className="text-muted-foreground lg:text-lg tracking-tight lg:leading-loose leading-loose">
-              My personal training program offers tailored 1-1 sessions and
-              expert guidance to help you achieve your goals, whether
-              you&apos;re aiming to lose weight, build muscle, improve
-              endurance, or enhance overall wellness.
-            </p>
+      <section className="space-y-8">
+        <InView className="max-w-4xl mx-auto px-6 space-y-4">
+          <div className="space-y-1">
+            <span className="text-5xl font-bold tracking-tigher leading-none opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground via-foreground to-transparent">
+              01
+            </span>
+            <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+              Personal Training
+            </h2>
           </div>
-          <Button asChild>
+          <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
+            Are you ready to embark on a journey to transform your health and
+            fitness? Look no further!
+          </h3>
+          <p className="text-muted-foreground text-lg lg:text-xl leading-relaxed lg:leading-relaxed tracking-tight">
+            My personal training program offers tailored 1-1 sessions and expert
+            guidance to help you achieve your goals, whether you&apos;re aiming
+            to lose weight, build muscle, improve endurance, or enhance overall
+            wellness.
+          </p>
+          <Button className="w-fit" variant="secondary" asChild>
             <Link href="https://wa.me/351961379705">Learn more</Link>
           </Button>
         </InView>
-        <InView className="flex flex-col gap-y-4 max-w-3xl text-center items-center">
-          <div className="flex flex-col gap-y-4 justify-center items-center">
-            <div className="flex flex-col gap-y-1.5">
-              <span className="text-4xl lg:text-6xl font-bold tracking-tigher opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-transparent">
-                02
-              </span>
-              <Highlight>RFC Mobility Training</Highlight>
-            </div>
-            <h1 className="text-lg lg:text-2xl font-headings">
-              Mobility is the Foundation to Healthy joints
-            </h1>
-            <p className="text-muted-foreground lg:text-lg tracking-tight lg:leading-loose leading-loose">
-              This is the most comprehensive mobility training system in the
-              world that goes beyond traditional stretching routines and
-              flexibility methods. FRC not only expands range of motion and
-              improves flexibility, but it also strengthens range of motion to
-              develop optimal body control.
-            </p>
+        <InView className="max-w-4xl mx-auto px-6 space-y-4">
+          <div className="space-y-1">
+            <span className="text-5xl font-bold tracking-tigher leading-none opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground via-foreground to-transparent">
+              02
+            </span>
+            <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+              RFC Mobility Training
+            </h2>
           </div>
-          <Button asChild>
+          <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
+            Mobility is the Foundation to Healthy joints
+          </h3>
+          <p className="text-muted-foreground text-lg lg:text-xl leading-relaxed lg:leading-relaxed tracking-tight">
+            This is the most comprehensive mobility training system in the world
+            that goes beyond traditional stretching routines and flexibility
+            methods. FRC not only expands range of motion and improves
+            flexibility, but it also strengthens range of motion to develop
+            optimal body control.
+          </p>
+          <Button className="w-fit" variant="secondary" asChild>
             <Link href="https://wa.me/351961379705">Learn more</Link>
           </Button>
         </InView>
       </section>
-      <section className="flex gap-y-4 flex-col justify-center items-center !px-0">
-        <InView className="flex gap-y-4 flex-col justify-center items-center text-center max-w-3xl px-6">
-          <Highlight>Reviews</Highlight>
-          <h1 className="text-xl lg:text-3xl font-headings">
+      <section className="space-y-4">
+        <InView className="max-w-4xl mx-auto px-6 space-y-4">
+          <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+            Reviews
+          </h2>
+          <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
             Commitment reflected in stories of those who share their experience
-          </h1>
-        </InView>
-        <InView>
-          <Reviews reviews={reviews} />
-        </InView>
-        <InView className="flex flex-col gap-y-4 items-center px-6">
-          <Button size="lg" asChild>
+          </h3>
+          <p className="text-muted-foreground text-lg lg:text-xl leading-relaxed lg:leading-relaxed tracking-tight">
+            My mission is helping my clients stay accountable, motivated and
+            transform their lives through an amazing fitness journey.
+          </p>
+          <Button variant="secondary" asChild>
             <Link href="https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7">
               More on Google Reviews
             </Link>
           </Button>
+        </InView>
+        <InView className="pb-16">
+          <Reviews reviews={reviews} />
         </InView>
       </section>
     </div>

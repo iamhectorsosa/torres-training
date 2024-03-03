@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Alfa_Slab_One as FontHeadings,
-  Inter as FontSans,
-} from "next/font/google";
+import { Oswald as FontHeadings, Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Link } from "@/components/ui/link";
@@ -13,7 +10,6 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 
 const fontHeadings = FontHeadings({
   subsets: ["latin"],
-  weight: ["400"],
   variable: "--font-headings",
 });
 

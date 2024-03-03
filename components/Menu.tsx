@@ -59,7 +59,7 @@ export const Menu: React.FC<{
                   },
                 },
               }}
-              className="space-y-9 lg:space-y-12 mt-auto px-2"
+              className="space-y-4 lg:space-y-8 mt-auto"
             >
               {navLinks.map(({ href, label }) => (
                 <motion.div
@@ -77,33 +77,10 @@ export const Menu: React.FC<{
                 >
                   <Link
                     key={href}
-                    className="block text-3xl lg:text-4xl font-headings decoration-4 underline-offset-[6px] relative hover:no-underline"
+                    className="block text-2xl lg:text-4xl uppercase font-bold decoration-4 underline-offset-[6px] relative hover:no-underline"
                     href={href}
                   >
-                    <motion.span
-                      aria-hidden
-                      className="absolute w-16 aspect-square -top-6 -left-6"
-                    >
-                      <svg
-                        className="fill-none stroke-primary"
-                        viewBox="0 0 200 200"
-                        stroke="#d6ab04"
-                        fill="none"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="fill-accent"
-                          stroke="none"
-                          transform="translate(-10,-10)"
-                          d="M159.5 45 41 85.5l7.5 70 81-56 30-54.5Z"
-                        />
-                        <path d="M159.5 45 41 85.5l7.5 70 81-56 30-54.5Z" />
-                      </svg>
-                    </motion.span>
-                    <span className="relative">{label}</span>
+                    {label}
                   </Link>
                 </motion.div>
               ))}
@@ -121,7 +98,7 @@ export const Menu: React.FC<{
               ))}
             </div>
           </div>
-          <div className="lg:h-full h-[30%] w-full relative">
+          <div className="lg:h-full h-[25%] w-full relative">
             <Image
               placeholder="blur"
               priority
