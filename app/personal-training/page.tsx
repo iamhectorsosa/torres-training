@@ -53,7 +53,7 @@ export default async function PersonalTraining() {
           enhance overall wellness, let&apos;s achieve long-lasting results.
         </p>
       </InView>
-      <div className="max-w-4xl space-y-8">
+      <div className="mx-auto max-w-4xl space-y-8">
         <h2 className="text-balance font-headings text-4xl font-medium uppercase leading-none lg:text-5xl">
           What&apos;s included?
         </h2>
