@@ -1,34 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Slideshow } from "@/components/Slideshow";
-import { InView } from "@/components/InView";
 import Image from "next/image";
 import Link from "next/link";
-import IMG_9211 from "../public/images/IMG_9211.jpg";
+import { Button } from "@/components/ui/button";
+import { InView } from "@/components/InView";
 import { Scroll } from "@/components/Scroll";
-import { Reviews } from "@/components/Reviews";
+import { Slideshow } from "@/components/Slideshow";
+import IMG_9211 from "../public/images/IMG_9211.jpg";
 import { Certifications } from "@/components/Certifications";
-
-async function getReviews(): Promise<typeof staticReviews> {
-  if (process.env.NODE_ENV !== "production") return staticReviews;
-
-  try {
-    const url = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
-    const response = await fetch(url, { next: { revalidate: 86400 } }).then(
-      (res) => res.json()
-    );
-
-    const { reviews, userRatingCount, rating } = response;
-    if (reviews && userRatingCount && rating) {
-      return { reviews, userRatingCount, rating };
-    }
-  } catch (error) {
-    console.error(
-      error instanceof Error ? error : "Unknown error fetching reviews"
-    );
-  }
-
-  return staticReviews;
-}
+import { Reviews } from "@/components/Reviews";
 
 export default async function Home() {
   const { reviews } = await getReviews();
@@ -38,7 +16,7 @@ export default async function Home() {
       <section className="space-y-4">
         <InView className="flex h-[70dvh] max-w-4xl flex-col justify-center gap-y-4 px-6">
           <div>
-            <h1 className="relative font-bold uppercase tracking-wide lg:text-xl">
+            <h1 className="font-bold uppercase tracking-wide lg:text-xl">
               Torres Training
             </h1>
             <h2 className="text-balance font-headings text-6xl font-medium uppercase leading-none lg:text-8xl">
@@ -68,10 +46,10 @@ export default async function Home() {
             sizes="240px"
           />
           <div className="space-y-4">
-            <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
+            <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
               Fabio Torres
             </h2>
-            <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
+            <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
               I am dedicated to helping individuals of all fitness levels
               achieve their health and wellness goals
             </h3>
@@ -93,22 +71,23 @@ export default async function Home() {
             <span className="bg-gradient-to-b from-foreground via-foreground to-transparent bg-clip-text text-5xl font-bold leading-none tracking-tight text-transparent opacity-60">
               01
             </span>
-            <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
+            <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
               Personal Training
             </h2>
           </div>
-          <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
+          <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
             Are you ready to embark on a journey to transform your health and
             fitness? Look no further!
           </h3>
           <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
-            My personal training program offers tailored 1-1 sessions and expert
-            guidance to help you achieve your goals, whether you&apos;re aiming
-            to lose weight, build muscle, improve endurance, or enhance overall
-            wellness.
+            Elevate your fitness journey with personalized 1-1 training sessions
+            tailored to your goals, preferences, and fitness level. whether
+            you&apos;re aiming to lose weight, build muscle, improve endurance,
+            or enhance overall wellness, let&apos;s achieve long-lasting
+            results.
           </p>
           <Button className="w-fit" variant="secondary" asChild>
-            <Link href="https://wa.me/351961379705">Learn more</Link>
+            <Link href="/personal-training">Learn more</Link>
           </Button>
         </InView>
         <InView className="mx-auto max-w-4xl space-y-4 px-6">
@@ -116,19 +95,20 @@ export default async function Home() {
             <span className="bg-gradient-to-b from-foreground via-foreground to-transparent bg-clip-text text-5xl font-bold leading-none tracking-tight text-transparent opacity-60">
               02
             </span>
-            <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
+            <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
               RFC Mobility Training
             </h2>
           </div>
-          <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
-            Mobility is the Foundation to Healthy joints
+          <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
+            Overcome joint limitations and mobility restriction to combact
+            chronic pain, stiffness, injuries, and plateaus in strength
           </h3>
           <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
-            This is the most comprehensive mobility training system in the world
-            that goes beyond traditional stretching routines and flexibility
-            methods. FRC not only expands range of motion and improves
-            flexibility, but it also strengthens range of motion to develop
-            optimal body control.
+            Functional Range Conditioning is the most comprehensive mobility
+            training system in the world that goes beyond traditional stretching
+            routines and flexibility methods. FRC not only expands range of
+            motion and improves flexibility, but it also strengthens range of
+            motion to develop optimal body control.
           </p>
           <Button className="w-fit" variant="secondary" asChild>
             <Link href="https://wa.me/351961379705">Learn more</Link>
@@ -137,10 +117,10 @@ export default async function Home() {
       </section>
       <section className="space-y-4">
         <InView className="mx-auto max-w-4xl space-y-4 px-6">
-          <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
+          <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
             Reviews
           </h2>
-          <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
+          <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
             Commitment reflected in stories of those who share their experience
           </h3>
           <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
@@ -159,6 +139,28 @@ export default async function Home() {
       </section>
     </div>
   );
+}
+
+async function getReviews(): Promise<typeof staticReviews> {
+  if (process.env.NODE_ENV !== "production") return staticReviews;
+
+  try {
+    const url = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
+    const response = await fetch(url, { next: { revalidate: 86400 } }).then(
+      (res) => res.json()
+    );
+
+    const { reviews, userRatingCount, rating } = response;
+    if (reviews && userRatingCount && rating) {
+      return { reviews, userRatingCount, rating };
+    }
+  } catch (error) {
+    console.error(
+      error instanceof Error ? error : "Unknown error fetching reviews"
+    );
+  }
+
+  return staticReviews;
 }
 
 const staticReviews = {

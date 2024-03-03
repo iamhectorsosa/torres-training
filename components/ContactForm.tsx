@@ -21,16 +21,22 @@ import { Loader2Icon } from "lucide-react";
 import { toast } from "sonner";
 import { Checkbox } from "./ui/checkbox";
 
-export const ContactForm: React.FC = () => {
+export const ContactForm: React.FC<Partial<ContactFormFields>> = ({
+  name = "",
+  email = "",
+  personal_training = false,
+  mobility_training = false,
+  notes = "",
+}) => {
   const [isLoading, setIsLoading] = React.useState(false);
   const form = useForm<ContactFormFields>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      personal_training: false,
-      mobility_training: false,
-      notes: "",
+      name,
+      email,
+      personal_training,
+      mobility_training,
+      notes,
     },
   });
 
