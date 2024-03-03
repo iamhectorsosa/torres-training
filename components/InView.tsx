@@ -5,11 +5,11 @@ import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const InView: React.FC<
-  React.PropsWithChildren & { className?: string }
-> = ({ className, children }) => {
+  React.PropsWithChildren & { className?: string; margin?: string }
+> = ({ className, children, margin = "0px 0px -180px" }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, {
-    margin: "0px 0px -180px",
+    margin,
     once: true,
   });
 

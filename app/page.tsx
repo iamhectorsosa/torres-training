@@ -36,7 +36,7 @@ export default async function Home() {
 
   return (
     <div className="gap-y-32 flex flex-col w-full *:px-6 py-[6dvh]">
-      <section className="flex flex-col items-center justify-center gap-y-8 !px-0">
+      <section className="flex flex-col items-center justify-center gap-y-6 !px-0">
         <InView className="flex flex-col gap-y-4 justify-center items-center max-w-4xl text-center h-[60dvh] px-6">
           <Highlight>Torres Training</Highlight>
           <h1 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings leading-none">
@@ -50,7 +50,10 @@ export default async function Home() {
           </Button>
           <Scroll />
         </InView>
-        <InView className="flex items-center justify-center flex-col gap-y-6">
+        <InView
+          margin={"0px"}
+          className="flex items-center justify-center flex-col gap-y-6"
+        >
           <Slideshow />
         </InView>
       </section>
