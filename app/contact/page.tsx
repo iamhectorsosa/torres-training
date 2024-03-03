@@ -28,19 +28,19 @@ export const metadata: Metadata = {
 
 export default async function Contact() {
   return (
-    <section className="flex flex-col items-center justify-center gap-y-6 mx-auto py-[6dvh] lg:py-32">
-      <InView className="flex flex-col gap-y-4 justify-center max-w-4xl px-6">
-        <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+    <section className="mx-auto flex flex-col items-center justify-center gap-y-6 py-[6dvh] lg:py-32">
+      <InView className="flex max-w-4xl flex-col justify-center gap-y-4 px-6">
+        <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
           Contact
         </h2>
-        <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
+        <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
           Get in touch
         </h3>
-        <p className="text-muted-foreground text-balance text-xl tracking-tight">
+        <p className="text-balance text-xl tracking-tight text-muted-foreground">
           Fill out the form below and we will get back to you soon
         </p>
       </InView>
-      <InView className="flex flex-col gap-y-4 justify-center max-w-4xl px-6">
+      <InView className="flex max-w-4xl flex-col justify-center gap-y-4 px-6">
         <ContactForm />
       </InView>
     </section>

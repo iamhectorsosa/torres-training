@@ -135,7 +135,7 @@ export const ContactForm: React.FC = () => {
           )}
         />
         <Button disabled={isLoading} type="submit">
-          {isLoading && <Loader2Icon className="animate-spin mr-2" />}
+          {isLoading && <Loader2Icon className="mr-2 animate-spin" />}
           Submit
         </Button>
       </form>

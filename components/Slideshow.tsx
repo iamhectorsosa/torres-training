@@ -40,14 +40,14 @@ export const Slideshow: React.FC = () => {
     <InfiniteScroll className="py-4" animationDuration="140s">
       {images.map(({ alt, src }, i) => (
         <figure key={i}>
-          <div className="overflow-hidden rounded-md w-[66dvw] xs:w-[240px] lg:w-[320px] aspect-[3/5] lg:aspect-[3/4] relative shadow">
+          <div className="relative aspect-[3/5] w-[66dvw] overflow-hidden rounded-md shadow xs:w-[240px] lg:aspect-[3/4] lg:w-[320px]">
             <Image
               loading={i > 10 ? "lazy" : undefined}
               priority={i <= 10}
               placeholder={i <= 10 ? "blur" : "empty"}
               src={src}
               alt={alt}
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
               width={320}
             />
           </div>

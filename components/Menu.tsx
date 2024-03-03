@@ -27,15 +27,15 @@ export const Menu: React.FC<{
         </Button>
       </DrawerTrigger>
       <DrawerContent className="h-dvh">
-        <div className="flex lg:flex-row flex-col h-full justify-between">
-          <div className="flex flex-col h-full w-full px-6 py-8">
-            <div className="flex justify-between items-center">
+        <div className="flex h-full flex-col justify-between lg:flex-row">
+          <div className="flex size-full flex-col px-6 py-8">
+            <div className="flex items-center justify-between">
               <div
                 onClick={() => {
                   triggerRef.current?.click();
                 }}
               >
-                <Link className="uppercase font-bold tracking-wide leading-none hover:no-underline">
+                <Link className="font-bold uppercase leading-none tracking-wide hover:no-underline">
                   Torres Training
                 </Link>
               </div>
@@ -59,7 +59,7 @@ export const Menu: React.FC<{
                   },
                 },
               }}
-              className="space-y-4 lg:space-y-8 mt-auto"
+              className="mt-auto space-y-4 lg:space-y-8"
             >
               {navLinks.map(({ href, label }) => (
                 <motion.div
@@ -77,7 +77,7 @@ export const Menu: React.FC<{
                 >
                   <Link
                     key={href}
-                    className="block text-2xl lg:text-4xl uppercase font-bold decoration-4 underline-offset-[6px] relative hover:no-underline"
+                    className="relative block text-2xl font-bold uppercase decoration-4 underline-offset-[6px] hover:no-underline lg:text-4xl"
                     href={href}
                   >
                     {label}
@@ -89,7 +89,7 @@ export const Menu: React.FC<{
               {contactLinks.map(({ href, label }) => (
                 <motion.div key={href} whileHover={{ x: 2.5 }}>
                   <Link
-                    className="block text-muted-foreground decoration-muted-foreground font-medium"
+                    className="block font-medium text-muted-foreground decoration-muted-foreground"
                     href={href}
                   >
                     {label}
@@ -98,14 +98,14 @@ export const Menu: React.FC<{
               ))}
             </div>
           </div>
-          <div className="lg:h-full h-[25%] w-full relative">
+          <div className="relative h-[25%] w-full lg:h-full">
             <Image
               placeholder="blur"
               priority
               alt="Fabio Torres"
               src={IMG_9263_2}
               width={1024}
-              className="object-cover object-center h-full w-full pointer-events-none hidden lg:block"
+              className="pointer-events-none hidden size-full object-cover object-center lg:block"
             />
             <Image
               placeholder="blur"
@@ -113,7 +113,7 @@ export const Menu: React.FC<{
               alt="Fabio Torres"
               src={IMG_9228_2}
               width={1024}
-              className="object-cover object-center h-full w-full pointer-events-none block lg:hidden"
+              className="pointer-events-none block size-full object-cover object-center lg:hidden"
             />
           </div>
         </div>

@@ -58,11 +58,11 @@ export default function RootLayout({
       >
         <Providers>
           <main className="z-10 bg-background">
-            <div className="px-6 sticky top-0 pt-8 pb-4 z-30 bg-background/80 backdrop-blur-lg w-full">
-              <nav className="flex max-w-7xl mx-auto justify-between items-center">
+            <div className="sticky top-0 z-30 w-full bg-background/80 px-6 pb-4 pt-8 backdrop-blur-lg">
+              <nav className="mx-auto flex max-w-7xl items-center justify-between">
                 <Link
                   href="/"
-                  className="uppercase font-bold tracking-wide leading-none hover:no-underline"
+                  className="font-bold uppercase leading-none tracking-wide hover:no-underline"
                 >
                   Torres Training
                 </Link>
@@ -72,7 +72,7 @@ export default function RootLayout({
             {children}
             <ScrollToTop />
           </main>
-          <footer className="bg-secondary px-6 pt-12 pb-24 mt-auto lg:sticky lg:bottom-0">
+          <footer className="mt-auto bg-secondary px-6 pb-24 pt-12 lg:sticky lg:bottom-0">
             <Footer navLinks={navLinks} contactLinks={contactLinks} />
           </footer>
         </Providers>
@@ -99,7 +99,7 @@ const navLinks = [
 const contactLinks = [
   {
     label: "R. Rodrigues Sampaio, 170 A, Lisbon",
-    href: "https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7",
+    href: "https://maps.app.goo.gl/iMMfzYVmYkGzsFZ39",
   },
   {
     label: "ptfabiotorres@gmail.com",

@@ -102,7 +102,7 @@ export const InfiniteScroll: React.FC<
             },
           },
         }}
-        className="flex *:shrink-0 gap-x-4 w-max hover:[animation-play-state:paused]"
+        className="flex w-max gap-x-4 *:shrink-0 hover:[animation-play-state:paused]"
       >
         {duplicateChildren}
       </motion.div>

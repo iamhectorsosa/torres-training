@@ -29,11 +29,11 @@ export const Reviews: React.FC<{
     <InfiniteScroll className="py-4">
       {reviews.map((review) => (
         <div
-          className="w-[350px] rounded-lg bg-muted/30 px-8 py-6 md:w-[450px] text-muted-foreground tracking-tight h-fit shadow-sm"
+          className="h-fit w-[350px] rounded-lg bg-muted/30 px-8 py-6 tracking-tight text-muted-foreground shadow-sm md:w-[450px]"
           key={review.authorAttribution.displayName + review.publishTime}
         >
           <blockquote className="flex flex-col gap-y-4">
-            <div className="h-5 flex gap-x-2">
+            <div className="flex h-5 gap-x-2">
               {Array.from({ length: 5 }).map((_, i) => (
                 <svg
                   key={i}
@@ -58,7 +58,7 @@ export const Reviews: React.FC<{
                 </svg>
               ))}
             </div>
-            <p className="lg:text-lg leading-loose lg:leading-loose line-clamp-6">
+            <p className="line-clamp-6 leading-loose lg:text-lg lg:leading-loose">
               {review.text.text}
             </p>
             <div className="flex items-center gap-x-2">

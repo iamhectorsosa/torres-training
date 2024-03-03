@@ -5,13 +5,13 @@ import NextLink from "next/link";
 import { cn } from "@/lib/utils";
 
 const linkVariants = cva(
-  "transition-colors focus-visible:outline-none focus-visible:underline underline-offset-[6px] decoration-2 w-fit",
+  "w-fit decoration-2 underline-offset-[6px] transition-colors focus-visible:underline focus-visible:outline-none",
   {
     variants: {
       variant: {
-        default: "text-foreground hover:underline decoration-foreground",
+        default: "text-foreground decoration-foreground hover:underline",
         primary:
-          "text-primary-foreground hover:underline decoration-primary-foreground",
+          "text-primary-foreground decoration-primary-foreground hover:underline",
       },
     },
     defaultVariants: {

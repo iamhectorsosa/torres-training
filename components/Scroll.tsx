@@ -18,7 +18,7 @@ export const Scroll: React.FC = () => {
         duration: 0.6,
       }}
     >
-      <span className="uppercase font-medium tracking-wide text-xs dark:text-primary text-muted-foreground opacity-80">
+      <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground opacity-80 dark:text-primary">
         Scroll down for more
       </span>
     </motion.span>

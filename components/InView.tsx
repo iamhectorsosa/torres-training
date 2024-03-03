@@ -14,7 +14,7 @@ export const InView: React.FC<
   });
 
   return (
-    <div className="flex items-center justify-center w-full" ref={ref}>
+    <div className="flex w-full items-center justify-center" ref={ref}>
       <div
         style={{
           transform: isInView ? "none" : "translateY(20px)",

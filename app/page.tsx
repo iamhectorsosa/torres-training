@@ -34,18 +34,18 @@ export default async function Home() {
   const { reviews } = await getReviews();
 
   return (
-    <div className="space-y-16 w-full">
+    <div className="w-full space-y-16">
       <section className="space-y-4">
-        <InView className="flex flex-col gap-y-4 justify-center max-w-4xl h-[70dvh] px-6">
+        <InView className="flex h-[70dvh] max-w-4xl flex-col justify-center gap-y-4 px-6">
           <div>
-            <h1 className="relative uppercase font-bold lg:text-xl tracking-wide">
+            <h1 className="relative font-bold uppercase tracking-wide lg:text-xl">
               Torres Training
             </h1>
-            <h2 className="text-6xl lg:text-8xl font-headings uppercase font-medium leading-none text-balance">
+            <h2 className="text-balance font-headings text-6xl font-medium uppercase leading-none lg:text-8xl">
               Personal Trainer and Osteopath
             </h2>
           </div>
-          <p className="text-muted-foreground text-balance text-xl tracking-tight">
+          <p className="text-balance text-xl tracking-tight text-muted-foreground">
             Ready to take your fitness to the next level?
           </p>
           <Button asChild size="lg">
@@ -58,24 +58,24 @@ export default async function Home() {
         </InView>
       </section>
       <section id="me" className="scroll-mt-24 space-y-8">
-        <InView className="max-w-4xl mx-auto px-6 space-y-4">
+        <InView className="mx-auto max-w-4xl space-y-4 px-6">
           <Image
             placeholder="blur"
             priority
             src={IMG_9211}
             alt={"Fabio Torres"}
-            className="h-[240px] w-[240px] aspect-square rounded-full shadow object-cover object-top"
+            className="aspect-square size-[240px] rounded-full object-cover object-top shadow"
             sizes="240px"
           />
           <div className="space-y-4">
-            <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+            <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
               Fabio Torres
             </h2>
-            <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
+            <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
               I am dedicated to helping individuals of all fitness levels
               achieve their health and wellness goals
             </h3>
-            <p className="text-muted-foreground text-lg lg:text-xl leading-relaxed lg:leading-relaxed tracking-tight">
+            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
               Over the last decade in Lisbon, Portugal, I&apos;ve successfully
               helped numerous clients achieve their fitness goals, ranging from
               weight loss and muscle gain, to improved athletic performance,
@@ -88,20 +88,20 @@ export default async function Home() {
         </InView>
       </section>
       <section className="space-y-8">
-        <InView className="max-w-4xl mx-auto px-6 space-y-4">
+        <InView className="mx-auto max-w-4xl space-y-4 px-6">
           <div className="space-y-1">
-            <span className="text-5xl font-bold tracking-tigher leading-none opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground via-foreground to-transparent">
+            <span className="bg-gradient-to-b from-foreground via-foreground to-transparent bg-clip-text text-5xl font-bold leading-none tracking-tight text-transparent opacity-60">
               01
             </span>
-            <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+            <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
               Personal Training
             </h2>
           </div>
-          <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
+          <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
             Are you ready to embark on a journey to transform your health and
             fitness? Look no further!
           </h3>
-          <p className="text-muted-foreground text-lg lg:text-xl leading-relaxed lg:leading-relaxed tracking-tight">
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
             My personal training program offers tailored 1-1 sessions and expert
             guidance to help you achieve your goals, whether you&apos;re aiming
             to lose weight, build muscle, improve endurance, or enhance overall
@@ -111,19 +111,19 @@ export default async function Home() {
             <Link href="https://wa.me/351961379705">Learn more</Link>
           </Button>
         </InView>
-        <InView className="max-w-4xl mx-auto px-6 space-y-4">
+        <InView className="mx-auto max-w-4xl space-y-4 px-6">
           <div className="space-y-1">
-            <span className="text-5xl font-bold tracking-tigher leading-none opacity-60 bg-clip-text text-transparent bg-gradient-to-b from-foreground via-foreground to-transparent">
+            <span className="bg-gradient-to-b from-foreground via-foreground to-transparent bg-clip-text text-5xl font-bold leading-none tracking-tight text-transparent opacity-60">
               02
             </span>
-            <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+            <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
               RFC Mobility Training
             </h2>
           </div>
-          <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
+          <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
             Mobility is the Foundation to Healthy joints
           </h3>
-          <p className="text-muted-foreground text-lg lg:text-xl leading-relaxed lg:leading-relaxed tracking-tight">
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
             This is the most comprehensive mobility training system in the world
             that goes beyond traditional stretching routines and flexibility
             methods. FRC not only expands range of motion and improves
@@ -136,19 +136,19 @@ export default async function Home() {
         </InView>
       </section>
       <section className="space-y-4">
-        <InView className="max-w-4xl mx-auto px-6 space-y-4">
-          <h2 className="text-4xl xs:text-5xl lg:text-6xl 2xl:text-7xl font-headings uppercase font-medium leading-none">
+        <InView className="mx-auto max-w-4xl space-y-4 px-6">
+          <h2 className="font-headings text-4xl font-medium uppercase leading-none xs:text-5xl lg:text-6xl 2xl:text-7xl">
             Reviews
           </h2>
-          <h3 className="relative uppercase font-bold md:text-lg lg:text-xl tracking-wide max-w-lg">
+          <h3 className="relative max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
             Commitment reflected in stories of those who share their experience
           </h3>
-          <p className="text-muted-foreground text-lg lg:text-xl leading-relaxed lg:leading-relaxed tracking-tight">
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
             My mission is helping my clients stay accountable, motivated and
             transform their lives through an amazing fitness journey.
           </p>
           <Button variant="secondary" asChild>
-            <Link href="https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7">
+            <Link href="https://maps.app.goo.gl/iMMfzYVmYkGzsFZ39">
               More on Google Reviews
             </Link>
           </Button>
