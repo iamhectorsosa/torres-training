@@ -60,7 +60,7 @@ export const ContactForm: React.FC = () => {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Hector Sosa" {...field} />
+                <Input placeholder="John Doe" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -73,7 +73,7 @@ export const ContactForm: React.FC = () => {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="hello@hectorsosa.me" {...field} />
+                <Input placeholder="john.doe@email.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
