@@ -46,7 +46,7 @@ export const InfiniteScroll: React.FC<
 > = ({
   children,
   className,
-  delayChildren = 0.25,
+  delayChildren = 0.3,
   staggerChildren = 0.25,
   animationDuration = "80s",
 }) => {

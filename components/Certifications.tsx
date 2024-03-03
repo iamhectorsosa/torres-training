@@ -5,18 +5,18 @@ import { cn } from "@/lib/utils";
 export const Certifications: React.FC = () => {
   return (
     <InfiniteScroll className="bg-muted/50 py-9">
-      <FRC className="h-[80px] aspect-video px-3" />
-      <DNS className="h-[80px] aspect-video px-3" />
-      <IKN className="h-[80px] aspect-video px-3" />
-      <NKT className="h-[80px] aspect-video px-3" />
-      <PRI className="h-[80px] aspect-video px-3" />
-      <ART className="h-[80px] aspect-video px-3" />
-      <FRC className="h-[80px] aspect-video px-3" />
-      <DNS className="h-[80px] aspect-video px-3" />
-      <IKN className="h-[80px] aspect-video px-3" />
-      <NKT className="h-[80px] aspect-video px-3" />
-      <PRI className="h-[80px] aspect-video px-3" />
-      <ART className="h-[80px] aspect-video px-3" />
+      <FRC className="h-[80px] aspect-video px-4" />
+      <DNS className="h-[80px] aspect-video px-4" />
+      <IKN className="h-[80px] aspect-video px-4" />
+      <NKT className="h-[80px] aspect-video px-4" />
+      <PRI className="h-[80px] aspect-video px-4" />
+      <ART className="h-[80px] aspect-video px-4" />
+      <FRC className="h-[80px] aspect-video px-4" />
+      <DNS className="h-[80px] aspect-video px-4" />
+      <IKN className="h-[80px] aspect-video px-4" />
+      <NKT className="h-[80px] aspect-video px-4" />
+      <PRI className="h-[80px] aspect-video px-4" />
+      <ART className="h-[80px] aspect-video px-4" />
     </InfiniteScroll>
   );
 };
