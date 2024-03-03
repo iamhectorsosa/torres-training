@@ -10,7 +10,7 @@ import { Reviews } from "@/components/Reviews";
 import { Certifications } from "@/components/Certifications";
 
 async function getReviews(): Promise<typeof staticReviews> {
-  if (process.env.NODE_ENV !== "production") return staticReviews;
+  if (process.env.NODE_ENV === "production") return staticReviews;
 
   try {
     const url = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
