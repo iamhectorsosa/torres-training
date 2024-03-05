@@ -15,11 +15,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
-import { formAction } from "@/app/contact/actions";
 import { ContactFormFields, formSchema } from "@/app/contact/form";
 import { Loader2Icon } from "lucide-react";
-import { toast } from "sonner";
 import { Checkbox } from "./ui/checkbox";
+import { formAction } from "@/app/contact/actions";
+import { toast } from "sonner";
+import { useServerFunction } from "@/lib/utils";
 
 export const ContactForm: React.FC<Partial<ContactFormFields>> = ({
   name = "",
@@ -28,7 +29,6 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = ({
   mobility_training = false,
   notes = "",
 }) => {
-  const [isLoading, setIsLoading] = React.useState(false);
   const form = useForm<ContactFormFields>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,25 +40,25 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = ({
     },
   });
 
-  async function onSubmit(values: ContactFormFields) {
-    setIsLoading(true);
-    const { result } = await formAction(values);
-    if (result === "SUCCESS") {
-      form.reset();
-      setIsLoading(false);
-      return toast(
-        `Thanks for reaching out, ${values.name}! We'll be in touch shortly!`,
-        {
-          duration: 8000,
-        }
-      );
-    }
-    return toast.error(`Oops! Something went wrong, ${values.name}!`);
-  }
+  const { isPending, execute } = useServerFunction(formAction, {
+    onSuccess: (variables) => {
+      toast.success("Email sent!", {
+        description: `Thanks for reaching out, ${variables.name}!`,
+      });
+    },
+    onError: (error) => {
+      toast.error("Something went wrong!", {
+        description: error.message,
+      });
+    },
+  });
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        onSubmit={form.handleSubmit((values) => execute(values))}
+        className="space-y-4"
+      >
         <FormField
           control={form.control}
           name="name"
@@ -140,8 +140,8 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = ({
             </FormItem>
           )}
         />
-        <Button disabled={isLoading} type="submit">
-          {isLoading && <Loader2Icon className="mr-2 animate-spin" />}
+        <Button disabled={isPending} type="submit">
+          {isPending && <Loader2Icon className="mr-2 animate-spin" />}
           Submit
         </Button>
       </form>
