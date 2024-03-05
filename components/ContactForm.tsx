@@ -22,22 +22,12 @@ import { formAction } from "@/app/contact/actions";
 import { toast } from "sonner";
 import { useServerFunction } from "@/lib/utils";
 
-export const ContactForm: React.FC<Partial<ContactFormFields>> = ({
-  name = "",
-  email = "",
-  personal_training = false,
-  mobility_training = false,
-  notes = "",
-}) => {
+export const ContactForm: React.FC<Partial<ContactFormFields>> = (
+  defaultValues
+) => {
   const form = useForm<ContactFormFields>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name,
-      email,
-      personal_training,
-      mobility_training,
-      notes,
-    },
+    defaultValues,
   });
 
   const { isPending, execute } = useServerFunction(formAction, {

@@ -1,6 +1,6 @@
 "use server";
 
-import { ContactFormFields } from "./form";
+import type { ContactFormFields } from "./form";
 import { Resend } from "resend";
 import { ContactEmail } from "@/components/email/template";
 
