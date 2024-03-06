@@ -6,6 +6,8 @@ import {
   Head,
   Hr,
   Html,
+  Img,
+  Link,
   Preview,
   Text,
 } from "@react-email/components";
@@ -44,7 +46,7 @@ export const ContactEmail = ({
         {notes && (
           <>
             <Text style={paragraph}>Here are your notes:</Text>
-            <Text style={subparagraph}>{notes}</Text>
+            <Text style={review}>{notes}</Text>
           </>
         )}
         <Text style={paragraph}>We will reach out to you shortly!</Text>
@@ -54,25 +56,26 @@ export const ContactEmail = ({
           Torres Training Team
         </Text>
         <Hr style={hr} />
-        <Text style={footer}>
-          <a
-            style={{ display: "block" }}
-            href="https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7"
-          >
-            TĚLO Fitness Studio | R. Rodrigues Sampaio, 170 A, Lisbon, PT
-          </a>
-          <a style={{ display: "block" }} href="mailto:ptfabiotorres@gmail.com">
+        <Img
+          style={image}
+          src="https://www.torrestraining.pt/images/email.png"
+        />
+        <Text>
+          <Link style={link} href="https://maps.app.goo.gl/3qsjdQLcA2otPAqN7">
+            R. Rodrigues Sampaio, 170 A, Lisbon, PT
+          </Link>
+          <Link style={link} href="https://maps.app.goo.gl/8vkndt5e61yKn7wN6">
+            TĚLO Fitness Studio
+          </Link>
+          <Link style={link} href="mailto:ptfabiotorres@gmail.com">
             ptfabiotorres@gmail.com
-          </a>
-          <a style={{ display: "block" }} href="https://wa.me/351961379705">
+          </Link>
+          <Link style={link} href="https://wa.me/351961379705">
             +351 961 379 705
-          </a>
-          <a
-            style={{ display: "block" }}
-            href="https://www.instagram.com/pt.fabiotorres"
-          >
+          </Link>
+          <Link style={link} href="https://www.instagram.com/pt.fabiotorres">
             @pt.fabiotorres
-          </a>
+          </Link>
         </Text>
       </Container>
     </Body>
@@ -86,8 +89,14 @@ const main = {
 };
 
 const container = {
+  width: "600px",
+  maxWidth: "100%",
   margin: "0 auto",
   padding: "20px 0 48px",
+};
+
+const image = {
+  maxWidth: "50%",
 };
 
 const paragraph = {
@@ -95,10 +104,11 @@ const paragraph = {
   lineHeight: "26px",
 };
 
-const subparagraph = {
-  color: "#979797",
-  fontSize: "16px",
-  lineHeight: "26px",
+const review = {
+  ...paragraph,
+  padding: "24px",
+  backgroundColor: "#f2f3f3",
+  borderRadius: "4px",
 };
 
 const hr = {
@@ -106,7 +116,9 @@ const hr = {
   margin: "20px 0",
 };
 
-const footer = {
-  color: "#8898aa",
-  fontSize: "12px",
+const link = {
+  display: "block",
+  fontSize: "14px",
+  color: "#9ca299",
+  textDecoration: "underline",
 };
