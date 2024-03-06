@@ -7,8 +7,8 @@ export const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email.",
   }),
-  personal_training: z.boolean(),
-  osteopathy: z.boolean(),
+  personal_training: z.boolean().optional(),
+  osteopathy: z.boolean().optional(),
   notes: z
     .string()
     .max(500, {

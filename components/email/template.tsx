@@ -18,8 +18,8 @@ export const ContactEmail = ({
 }: {
   name: string;
   notes?: string;
-  personal_training: boolean;
-  osteopathy: boolean;
+  personal_training?: boolean;
+  osteopathy?: boolean;
 }) => (
   <Html>
     <Head />

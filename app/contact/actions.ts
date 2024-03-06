@@ -7,7 +7,7 @@ import { ContactEmail } from "@/components/email/template";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const FABIO_EMAIL = "ptfabiotorres@gmail.com";
-const TEST_EMAIL = "delivered@resend.dev";
+const TEST_EMAIL = "hello@hectorsosa.me";
 
 export async function formAction({
   name,
