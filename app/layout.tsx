@@ -87,8 +87,8 @@ const navLinks = [
     href: "/personal-training",
   },
   {
-    label: "FRC Mobility Training",
-    href: "https://wa.me/351961379705",
+    label: "Osteopathy",
+    href: "/osteopathy",
   },
   {
     label: "Contact",
@@ -98,8 +98,8 @@ const navLinks = [
 
 const contactLinks = [
   {
-    label: "R. Rodrigues Sampaio, 170 A, Lisbon",
-    href: "https://maps.app.goo.gl/iMMfzYVmYkGzsFZ39",
+    label: "TĚLO Fitness Studio, Lisbon PT",
+    href: "https://maps.app.goo.gl/8vkndt5e61yKn7wN6",
   },
   {
     label: "ptfabiotorres@gmail.com",

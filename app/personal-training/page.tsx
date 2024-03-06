@@ -38,7 +38,7 @@ export default async function PersonalTraining() {
         <Image
           placeholder="blur"
           priority
-          alt="Fabio Torres"
+          alt="Fabio Torres correcting technique"
           src={IMG_9259_2}
           width={1024}
           className="pointer-events-none h-[180px] w-full object-cover object-center lg:h-[280px]"
@@ -54,9 +54,11 @@ export default async function PersonalTraining() {
         </p>
       </InView>
       <div className="mx-auto max-w-4xl space-y-8">
-        <h2 className="text-balance font-headings text-4xl font-medium uppercase leading-none lg:text-5xl">
-          What&apos;s included?
-        </h2>
+        <InView margin="0px">
+          <h2 className="text-balance font-headings text-4xl font-medium uppercase leading-none lg:text-5xl">
+            What&apos;s included?
+          </h2>
+        </InView>
         <Steps
           steps={[
             {

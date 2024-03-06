@@ -95,7 +95,7 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = (
           />
           <FormField
             control={form.control}
-            name="mobility_training"
+            name="osteopathy"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
@@ -104,7 +104,7 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = (
                     onCheckedChange={field.onChange}
                   />
                 </FormControl>
-                <FormLabel className="ml-2">FRC Mobility Training</FormLabel>
+                <FormLabel className="ml-2">Osteopathy</FormLabel>
                 <FormMessage />
               </FormItem>
             )}

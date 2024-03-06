@@ -13,7 +13,7 @@ export async function formAction({
   name,
   email,
   personal_training,
-  mobility_training,
+  osteopathy,
   notes,
 }: ContactFormFields): Promise<void> {
   const { error } = await resend.emails.send({
@@ -27,7 +27,7 @@ export async function formAction({
     react: ContactEmail({
       name,
       personal_training,
-      mobility_training,
+      osteopathy,
       notes,
     }),
   });

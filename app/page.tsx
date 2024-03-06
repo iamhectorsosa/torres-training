@@ -96,22 +96,22 @@ export default async function Home() {
               02
             </span>
             <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
-              RFC Mobility Training
+              Osteopathy
             </h2>
           </div>
           <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
-            Overcome joint limitations and mobility restriction to combact
-            chronic pain, stiffness, injuries, and plateaus in strength
+            Discover the power of personalized Osteopathy to heal, revitalize,
+            and empower your body
           </h3>
           <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
-            Functional Range Conditioning is the most comprehensive mobility
-            training system in the world that goes beyond traditional stretching
-            routines and flexibility methods. FRC not only expands range of
-            motion and improves flexibility, but it also strengthens range of
-            motion to develop optimal body control.
+            Osteopathy is a system of diagnosis and treatment for a wide range
+            of medical conditions. By addressing the root cause of discomfort,
+            we ensure rapid, sustainable recovery. Embrace a life free from
+            limitations and move fearlessly with our specialized, action-packed
+            care.
           </p>
           <Button className="w-fit" variant="secondary" asChild>
-            <Link href="https://wa.me/351961379705">Learn more</Link>
+            <Link href="/osteopathy">Learn more</Link>
           </Button>
         </InView>
       </section>

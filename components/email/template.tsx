@@ -14,18 +14,16 @@ export const ContactEmail = ({
   name,
   notes,
   personal_training,
-  mobility_training,
+  osteopathy,
 }: {
   name: string;
   notes?: string;
   personal_training: boolean;
-  mobility_training: boolean;
+  osteopathy: boolean;
 }) => (
   <Html>
     <Head />
-    <Preview>
-      Welcome and thank you for reaching out to Torres Training
-    </Preview>
+    <Preview>Welcome and thank you for reaching out to Torres Training</Preview>
     <Body style={main}>
       <Container style={container}>
         <Text style={paragraph}>Hi {name},</Text>
@@ -33,14 +31,14 @@ export const ContactEmail = ({
           Welcome and thank you for reaching out to Torres Training
         </Text>
         <Text style={paragraph}>
-          {personal_training || mobility_training ? (
+          {personal_training || osteopathy ? (
             <>
               You are interested in: {personal_training && "Personal Training"}
-              {personal_training && mobility_training && " and "}
-              {mobility_training && "FRC Mobility Training"}.
+              {personal_training && osteopathy && " and "}
+              {osteopathy && "Osteopathy"}.
             </>
           ) : (
-            "You didn't select any training preferences."
+            "You didn't select any service preferences."
           )}
         </Text>
         {notes && (
@@ -49,9 +47,7 @@ export const ContactEmail = ({
             <Text style={subparagraph}>{notes}</Text>
           </>
         )}
-        <Text style={paragraph}>
-          We will reach out to you shortly!
-        </Text>
+        <Text style={paragraph}>We will reach out to you shortly!</Text>
         <Text style={paragraph}>
           Best,
           <br />
@@ -63,7 +59,7 @@ export const ContactEmail = ({
             style={{ display: "block" }}
             href="https://maps.app.goo.gl/9aVHWEXJ8E4rZ1zJ7"
           >
-            R. Rodrigues Sampaio, 170 A, Lisbon
+            TĚLO Fitness Studio | R. Rodrigues Sampaio, 170 A, Lisbon, PT
           </a>
           <a style={{ display: "block" }} href="mailto:ptfabiotorres@gmail.com">
             ptfabiotorres@gmail.com
