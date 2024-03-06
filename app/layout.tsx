@@ -83,6 +83,10 @@ export default function RootLayout({
 
 const navLinks = [
   {
+    label: "Home",
+    href: "/",
+  },
+  {
     label: "Personal Training",
     href: "/personal-training",
   },
@@ -98,7 +102,11 @@ const navLinks = [
 
 const contactLinks = [
   {
-    label: "TĚLO Fitness Studio, Lisbon PT",
+    label: "R. Rodrigues Sampaio, 170 A, Lisbon",
+    href: "https://maps.app.goo.gl/3qsjdQLcA2otPAqN7",
+  },
+  {
+    label: "TĚLO Fitness Studio",
     href: "https://maps.app.goo.gl/8vkndt5e61yKn7wN6",
   },
   {
