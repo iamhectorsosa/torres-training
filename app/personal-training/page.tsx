@@ -3,6 +3,7 @@ import { InView } from "@/components/InView";
 import { type Metadata } from "next";
 import Image from "next/image";
 import IMG_9259_2 from "../../public/images/IMG_9259_2.jpg";
+import IMG_9498_2 from "../../public/images/IMG_9498_2.jpg";
 import { Steps } from "@/components/Steps";
 
 export const metadata: Metadata = {
@@ -100,6 +101,16 @@ export default async function PersonalTraining() {
           ]}
         />
       </div>
+      <InView className="max-w-4xl space-y-4">
+        <Image
+          placeholder="blur"
+          priority
+          alt="Fabio Torres correcting squats"
+          src={IMG_9498_2}
+          width={1024}
+          className="pointer-events-none h-[180px] w-full object-cover object-center lg:h-[280px]"
+        />
+      </InView>
       <InView className="max-w-4xl space-y-8">
         <div className="space-y-4">
           <h2 className="text-balance font-headings text-4xl font-medium uppercase leading-none lg:text-5xl">
