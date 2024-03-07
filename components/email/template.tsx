@@ -66,6 +66,9 @@ export const ContactEmail = ({
           src="https://www.torrestraining.pt/images/email-footer.png"
         />
         <Text>
+          <Link style={link} href="https://torrestraining.pt">
+            torrestraining.pt
+          </Link>
           <Link style={link} href="https://maps.app.goo.gl/3qsjdQLcA2otPAqN7">
             R. Rodrigues Sampaio, 170 A, Lisbon, PT
           </Link>
@@ -96,8 +99,7 @@ const main = {
 const container = {
   width: "600px",
   maxWidth: "100%",
-  margin: "0 auto",
-  padding: "20px 0 48px",
+  margin: "36px auto 48px",
 };
 
 const imageHeader = {
