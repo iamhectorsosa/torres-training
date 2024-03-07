@@ -28,9 +28,14 @@ export const ContactEmail = ({
     <Preview>Welcome and thank you for reaching out to Torres Training</Preview>
     <Body style={main}>
       <Container style={container}>
+        <Img
+          style={imageHeader}
+          src="https://www.torrestraining.pt/images/email-header.png"
+        />
+        <Text style={heading}>Message received</Text>
         <Text style={paragraph}>Hi {name},</Text>
         <Text style={paragraph}>
-          Welcome and thank you for reaching out to Torres Training
+          Welcome and thank you for reaching out to Torres Training!
         </Text>
         <Text style={paragraph}>
           {personal_training || osteopathy ? (
@@ -57,8 +62,8 @@ export const ContactEmail = ({
         </Text>
         <Hr style={hr} />
         <Img
-          style={image}
-          src="https://www.torrestraining.pt/images/email.png"
+          style={imageFooter}
+          src="https://www.torrestraining.pt/images/email-footer.png"
         />
         <Text>
           <Link style={link} href="https://maps.app.goo.gl/3qsjdQLcA2otPAqN7">
@@ -95,13 +100,23 @@ const container = {
   padding: "20px 0 48px",
 };
 
-const image = {
+const imageHeader = {
+  maxWidth: "100%",
+};
+
+const imageFooter = {
   maxWidth: "50%",
+};
+
+const heading = {
+  fontSize: "28px",
+  lineHeight: "28px",
+  fontWeight: "600",
 };
 
 const paragraph = {
   fontSize: "16px",
-  lineHeight: "26px",
+  lineHeight: "28px",
 };
 
 const review = {
