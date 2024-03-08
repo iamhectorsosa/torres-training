@@ -65,39 +65,21 @@ export default async function Osteopathy() {
           steps={[
             {
               step: "01",
-              title: "Understanding Osteopathy",
+              title: "Welcome to Our Osteopathy Journey",
               description:
-                "We begin with an introduction to osteopathy, explaining how it addresses a wide range of medical conditions through the integration of the body's structure and function, ensuring smooth collaboration between the skeleton, muscles, ligaments, and connective tissues.",
+                "Let me introduce you to osteopathy, a holistic approach I passionately follow to diagnose and treat a variety of conditions. It's fundamental to understand that your well-being hinges on the seamless cooperation of your skeleton, muscles, ligaments, and connective tissues. Together, we'll embark on a journey to enhance your health, focusing on the integral structure and function of your body.",
             },
             {
               step: "02",
-              title: "Personalized Treatment Approach",
+              title: "Personalized Healing and Active Recovery",
               description:
-                "Utilizing touch, physical manipulation, stretching, and massage, we increase joint mobility, relieve muscle tension, and enhance blood and nerve supply to tissues, all tailored to support your body's healing mechanisms.",
+                "In our sessions, I'll employ touch, physical manipulation, stretching, and massage, not just as treatments but as gateways to your active recovery. My approach, tailored especially for athletes and active individuals, emphasizes movement strategies and active techniques to prevent re-injury and cultivate fearless, effortless movement. Together, we'll build a treatment plan that resonates with your lifestyle and goals.",
             },
             {
               step: "03",
-              title: "Active Recovery and Movement",
+              title: "Discovering the Root Cause for Lasting Health",
               description:
-                "As a sports specialist, I incorporate an active approach to recovery, focusing on adjustments, mobilization techniques, and active movement strategies to prevent re-injury and promote fearless, thoughtless movement.",
-            },
-            {
-              step: "04",
-              title: "Root Cause Analysis",
-              description:
-                "Diving deep to identify the root cause of your symptoms, I devise sustainable strategies to address these issues, ensuring a quicker return to your beloved activities with a stronger and more resilient body.",
-            },
-            {
-              step: "05",
-              title: "Customized Osteopathy Sessions",
-              description:
-                "Every session is customized to your needs, focusing on providing you with the most effective treatment and recovery plan. Unlike typical passive sessions, our active, holistic approach guarantees comprehensive care.",
-            },
-            {
-              step: "06",
-              title: "Ongoing Support and Guidance",
-              description:
-                "I am committed to your long-term health and well-being, offering continuous support and guidance. As the owner and your dedicated osteopath, I ensure that your journey to health is well navigated, aiming for lasting results.",
+                "My commitment goes beyond surface-level symptoms. I strive to uncover the root cause of your discomfort, employing a thorough analysis and leveraging sustainable healing strategies. This approach ensures you not only recover faster but also regain the strength to return to what you love doing most—stronger and more resilient. Let's work together to ensure your health journey is successful and lasting.",
             },
           ]}
         />
