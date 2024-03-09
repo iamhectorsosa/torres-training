@@ -87,7 +87,7 @@ export default async function Home() {
             results.
           </p>
           <Button className="w-fit" variant="secondary" asChild>
-            <Link href="/personal-training">Learn more</Link>
+            <Link href="/personal-training">More on Personal Training</Link>
           </Button>
         </InView>
         <InView className="mx-auto max-w-4xl space-y-4 px-6">
@@ -111,7 +111,7 @@ export default async function Home() {
             care.
           </p>
           <Button className="w-fit" variant="secondary" asChild>
-            <Link href="/osteopathy">Learn more</Link>
+            <Link href="/osteopathy">More on Osteopathy</Link>
           </Button>
         </InView>
       </section>
