@@ -2,8 +2,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { InView } from "@/components/InView";
 import { type Metadata } from "next";
 import Image from "next/image";
-import IMG_9233_2 from "../../public/images/IMG_9233_2.jpg";
-import IMG_9226_2 from "../../public/images/IMG_9226_2.jpg";
+import IMG_1950 from "../../public/images/IMG_1950.jpg";
+import IMG_1953 from "../../public/images/IMG_1953.jpg";
 import { Steps } from "@/components/Steps";
 
 export const metadata: Metadata = {
@@ -39,8 +39,8 @@ export default async function Osteopathy() {
         <Image
           placeholder="blur"
           priority
-          alt="Fabio Torres correcting posture"
-          src={IMG_9233_2}
+          alt="Fabio Torres working as an Osteopath"
+          src={IMG_1950}
           width={1024}
           className="pointer-events-none h-[180px] w-full object-cover object-center lg:h-[280px]"
         />
@@ -88,8 +88,8 @@ export default async function Osteopathy() {
         <Image
           placeholder="blur"
           priority
-          alt="Fabio Torres correcting posture"
-          src={IMG_9226_2}
+          alt="Fabio Torres working as an Osteopath"
+          src={IMG_1953}
           width={1024}
           className="pointer-events-none h-[180px] w-full object-cover object-center lg:h-[280px]"
         />
