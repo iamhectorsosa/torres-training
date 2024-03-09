@@ -12,7 +12,7 @@ import IMG_1953 from "../../public/images/IMG_1953.jpg";
 import IMG_1959 from "../../public/images/IMG_1959.jpg";
 import IMG_1964 from "../../public/images/IMG_1964.jpg";
 
-export const images: { alt: string; src: StaticImageData }[] = [
+const images: { alt: string; src: StaticImageData }[] = [
   { alt: "Fabio treating the neck", src: IMG_1945 },
   { alt: "Fabio treating the hips", src: IMG_1950 },
   { alt: "Fabio treating the knee", src: IMG_1952 },

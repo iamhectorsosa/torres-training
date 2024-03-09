@@ -21,7 +21,7 @@ import IMG_9263_2 from "../../public/images/IMG_9263_2.jpg";
 import IMG_9266 from "../../public/images/IMG_9266.jpg";
 import IMG_9495_2 from "../../public/images/IMG_9495_2.jpg";
 
-export const images: { alt: string; src: StaticImageData }[] = [
+const images: { alt: string; src: StaticImageData }[] = [
   { alt: "Fabio training dumbbell press", src: IMG_9212_2 },
   { alt: "Fabio training cable crossover", src: IMG_9213_2 },
   { alt: "Fabio training barbell squat", src: IMG_9221 },
