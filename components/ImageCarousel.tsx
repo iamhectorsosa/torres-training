@@ -24,7 +24,7 @@ export const ImageCarousel: React.FC<{
               alt={image.alt}
               key={image.alt}
               src={image.src}
-              className="aspect-[3/4] lg:aspect-[3/2] object-cover lg:object-contain object-center"
+              className="aspect-[3/4] object-cover object-center lg:aspect-[3/2] lg:object-contain"
             />
           </CarouselItem>
         ))}
