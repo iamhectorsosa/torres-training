@@ -1,10 +1,25 @@
 import { ContactForm } from "@/components/ContactForm";
 import { InView } from "@/components/InView";
 import { type Metadata } from "next";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import IMG_1950 from "../../public/images/IMG_1950.jpg";
-import IMG_1953 from "../../public/images/IMG_1953.jpg";
 import { Steps } from "@/components/Steps";
+import { ImageCarousel } from "@/components/ImageCarousel";
+
+import IMG_1945 from "../../public/images/IMG_1945.jpg";
+import IMG_1952 from "../../public/images/IMG_1952.jpg";
+import IMG_1953 from "../../public/images/IMG_1953.jpg";
+import IMG_1959 from "../../public/images/IMG_1959.jpg";
+import IMG_1964 from "../../public/images/IMG_1964.jpg";
+
+export const images: { alt: string; src: StaticImageData }[] = [
+  { alt: "Fabio treating the neck", src: IMG_1945 },
+  { alt: "Fabio treating the hips", src: IMG_1950 },
+  { alt: "Fabio treating the knee", src: IMG_1952 },
+  { alt: "Fabio treating the hips and leg", src: IMG_1953 },
+  { alt: "Fabio treating the shoulder", src: IMG_1959 },
+  { alt: "Fabio treating the back", src: IMG_1964 },
+];
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://torrestraining.pt"),
@@ -85,14 +100,7 @@ export default async function Osteopathy() {
         />
       </div>
       <InView className="max-w-4xl space-y-4">
-        <Image
-          placeholder="blur"
-          priority
-          alt="Fabio Torres working as an Osteopath"
-          src={IMG_1953}
-          width={1024}
-          className="pointer-events-none h-[180px] w-full object-cover object-center lg:h-[280px]"
-        />
+        <ImageCarousel images={images} />
       </InView>
       <InView className="max-w-4xl space-y-8">
         <div className="space-y-4">

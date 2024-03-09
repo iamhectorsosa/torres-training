@@ -1,10 +1,43 @@
 import { ContactForm } from "@/components/ContactForm";
 import { InView } from "@/components/InView";
 import { type Metadata } from "next";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import IMG_9259_2 from "../../public/images/IMG_9259_2.jpg";
 import IMG_9498_2 from "../../public/images/IMG_9498_2.jpg";
 import { Steps } from "@/components/Steps";
+import { ImageCarousel } from "@/components/ImageCarousel";
+
+import IMG_9212_2 from "../../public/images/IMG_9212_2.jpg";
+import IMG_9213_2 from "../../public/images/IMG_9213_2.jpg";
+import IMG_9221 from "../../public/images/IMG_9221.jpg";
+import IMG_9224 from "../../public/images/IMG_9224.jpg";
+import IMG_9228_2 from "../../public/images/IMG_9228_2.jpg";
+import IMG_9229_2 from "../../public/images/IMG_9229_2.jpg";
+import IMG_9230_2 from "../../public/images/IMG_9230_2.jpg";
+import IMG_9238_2 from "../../public/images/IMG_9238_2.jpg";
+import IMG_9252 from "../../public/images/IMG_9252.jpg";
+import IMG_9257_2 from "../../public/images/IMG_9257_2.jpg";
+import IMG_9263_2 from "../../public/images/IMG_9263_2.jpg";
+import IMG_9266 from "../../public/images/IMG_9266.jpg";
+import IMG_9495_2 from "../../public/images/IMG_9495_2.jpg";
+
+export const images: { alt: string; src: StaticImageData }[] = [
+  { alt: "Fabio training dumbbell press", src: IMG_9212_2 },
+  { alt: "Fabio training cable crossover", src: IMG_9213_2 },
+  { alt: "Fabio training barbell squat", src: IMG_9221 },
+  { alt: "Fabio teaching deadlifts", src: IMG_9224 },
+  { alt: "Fabio training deadlifts", src: IMG_9228_2 },
+  { alt: "Fabio training lunges", src: IMG_9229_2 },
+  { alt: "Fabio training lunges form", src: IMG_9230_2 },
+  { alt: "Fabio training pullups", src: IMG_9238_2 },
+  { alt: "Fabio training cable crossover form", src: IMG_9252 },
+  { alt: "Fabio training cable crossover hold", src: IMG_9257_2 },
+  { alt: "Fabio training tricep pulldown", src: IMG_9259_2 },
+  { alt: "Fabio training dumbbell press form", src: IMG_9263_2 },
+  { alt: "Fabio training dummbell press hold", src: IMG_9266 },
+  { alt: "Fabio training squats form", src: IMG_9495_2 },
+  { alt: "Fabio training good mornings form", src: IMG_9498_2 },
+];
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://torrestraining.pt"),
@@ -102,14 +135,7 @@ export default async function PersonalTraining() {
         />
       </div>
       <InView className="max-w-4xl space-y-4">
-        <Image
-          placeholder="blur"
-          priority
-          alt="Fabio Torres correcting squats"
-          src={IMG_9498_2}
-          width={1024}
-          className="pointer-events-none h-[180px] w-full object-cover object-center lg:h-[280px]"
-        />
+        <ImageCarousel images={images} />
       </InView>
       <InView className="max-w-4xl space-y-8">
         <div className="space-y-4">
