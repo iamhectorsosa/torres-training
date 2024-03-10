@@ -46,6 +46,7 @@ export const Footer: React.FC<{
       </div>
       <div className="mx-auto max-w-7xl">
         <iframe
+          title="Google Map for Torres Training"
           className="h-[240px] w-full"
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1556.3493348247275!2d-9.148915670623717!3d38.724726700000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933a28665dde5%3A0x269b72c0c1fabda8!2sTelo%20Fitness%20Studio%20-%20Personal%20Trainer%20%26%20Studio%20de%20Pilates!5e0!3m2!1sen!2scz!4v1709121172897!5m2!1sen!2scz"
           loading="lazy"

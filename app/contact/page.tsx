@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://torrestraining.pt"),
+  alternates: { canonical: "https://torrestraining.pt/contact" },
   title: "Contact | Torres Training by Fabio Torres",
   description: "Your next chapter starts now—let's make it extraordinary",
   keywords: [
@@ -28,27 +29,41 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Contact | Torres Training by Fabio Torres",
+  image: "https://torrestraining.pt/osteopathy/opengraph-image.png",
+  description: "Your next chapter starts now—let's make it extraordinary",
+};
+
 export default async function Contact() {
   return (
-    <section className="w-full space-y-8 px-4 py-24">
-      <InView className="max-w-4xl space-y-8">
-        <div className="space-y-4">
-          <h1 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
-            Contact
-          </h1>
-          <p className="text-xl tracking-tight text-muted-foreground">
-            Whether you&apos;re seeking to elevate your fitness through
-            personalized training or aiming to enhance your overall well-being
-            through our specialized osteopathy approach, we&apos;re here to
-            guide you every step of the way.
-          </p>
-          <p className="text-xl tracking-tight text-muted-foreground">
-            Your next chapter starts now—let&apos;s make it extraordinary. Fill
-            out the form below and we will get back to you soon.
-          </p>
-        </div>
-        <ContactForm />
-      </InView>
-    </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <section className="w-full space-y-8 px-4 py-24">
+        <InView className="max-w-4xl space-y-8">
+          <div className="space-y-4">
+            <h1 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
+              Contact
+            </h1>
+            <p className="text-xl tracking-tight text-muted-foreground">
+              Whether you&apos;re seeking to elevate your fitness through
+              personalized training or aiming to enhance your overall well-being
+              through our specialized osteopathy approach, we&apos;re here to
+              guide you every step of the way.
+            </p>
+            <p className="text-xl tracking-tight text-muted-foreground">
+              Your next chapter starts now—let&apos;s make it extraordinary.
+              Fill out the form below and we will get back to you soon.
+            </p>
+          </div>
+          <ContactForm />
+        </InView>
+      </section>
+    </>
   );
 }

@@ -20,6 +20,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://torrestraining.pt"),
+  alternates: { canonical: "https://torrestraining.pt" },
   title: "Welcome to Torres Training by Fabio Torres",
   description:
     "Personal Trainer & Osteopath. Ready to take your fitness to the next level?",
