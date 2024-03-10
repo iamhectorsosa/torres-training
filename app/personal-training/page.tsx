@@ -20,6 +20,8 @@ import IMG_9257_2 from "../../public/images/IMG_9257_2.jpg";
 import IMG_9263_2 from "../../public/images/IMG_9263_2.jpg";
 import IMG_9266 from "../../public/images/IMG_9266.jpg";
 import IMG_9495_2 from "../../public/images/IMG_9495_2.jpg";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const images: { alt: string; src: StaticImageData }[] = [
   { alt: "Fabio training dumbbell press", src: IMG_9212_2 },
@@ -134,6 +136,22 @@ export default async function PersonalTraining() {
           ]}
         />
       </div>
+      <InView margin="0px" className="mx-auto max-w-4xl space-y-4">
+        <h2 className="text-balance font-headings text-4xl font-medium uppercase leading-none lg:text-5xl">
+          What&apos;s next?
+        </h2>
+        <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
+          Kickstart your fitness transformation today. From tailored assessments
+          to bespoke workout plans and one-on-one guidance, we&apos;re here to
+          help you reach your goals. Schedule your free consultation now and
+          begin your journey to a stronger, healthier you.
+        </p>
+        <Button size="lg" asChild>
+          <Link href="https://wa.me/351961379705">
+            Start a conversation with Fabio
+          </Link>
+        </Button>
+      </InView>
       <InView className="max-w-4xl space-y-4">
         <ImageCarousel images={images} />
       </InView>

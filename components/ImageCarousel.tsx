@@ -21,6 +21,7 @@ export const ImageCarousel: React.FC<{
           <CarouselItem key={image.alt}>
             <Image
               width={1280}
+              sizes="(max-width: 768px) 100vw"
               placeholder="blur"
               alt={image.alt}
               key={image.alt}

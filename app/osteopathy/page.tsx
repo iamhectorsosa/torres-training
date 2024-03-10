@@ -11,6 +11,8 @@ import IMG_1952 from "../../public/images/IMG_1952.jpg";
 import IMG_1953 from "../../public/images/IMG_1953.jpg";
 import IMG_1959 from "../../public/images/IMG_1959.jpg";
 import IMG_1964 from "../../public/images/IMG_1964.jpg";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const images: { alt: string; src: StaticImageData }[] = [
   { alt: "Fabio treating the neck", src: IMG_1945 },
@@ -99,6 +101,22 @@ export default async function Osteopathy() {
           ]}
         />
       </div>
+      <InView margin="0px" className="mx-auto max-w-4xl space-y-4">
+        <h2 className="text-balance font-headings text-4xl font-medium uppercase leading-none lg:text-5xl">
+          What&apos;s next?
+        </h2>
+        <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
+          Begin your path to holistic health with our osteopathy services.
+          Embrace a tailored approach to wellness, addressing the root causes of
+          your discomfort for lasting recovery. Book your free consultation
+          today and move closer to a balanced, pain-free life.
+        </p>
+        <Button size="lg" asChild>
+          <Link href="https://wa.me/351961379705">
+            Start a conversation with Fabio
+          </Link>
+        </Button>
+      </InView>
       <InView className="max-w-4xl space-y-4">
         <ImageCarousel images={images} />
       </InView>
