@@ -43,21 +43,23 @@ const images: { alt: string; src: StaticImageData }[] = [
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://torrestraining.pt"),
-  title: "Personal Training | Torres Training",
+  title: "Personal Training | Torres Training by Fabio Torres",
   description:
     "Elevate your fitness journey with personalized 1-1 training sessions tailored to your goals, preferences, and fitness level",
   keywords: [
-    "Lisbon",
-    "Personal",
-    "Trainer",
-    "Personal Trainer",
-    "Osteopath",
-    "English",
-    "Gym",
-    "Fitness",
+    "personal training Lisbon",
+    "expat fitness coaching Lisbon",
+    "custom workout plans for foreigners",
+    "one-on-one fitness sessions Lisbon",
+    "personal gym training Lisbon",
+    "fitness progress tracking Lisbon",
+    "motivational fitness coaching",
+    "English speaking personal trainer Lisbon",
+    "personal fitness assessment Lisbon",
+    "private training studio Lisbon",
   ],
   openGraph: {
-    title: "Personal Training | Torres Training",
+    title: "Personal Training | Torres Training by Fabio Torres",
     description:
       "Elevate your fitness journey with personalized 1-1 training sessions tailored to your goals, preferences, and fitness level",
     url: new URL("https://torrestraining.pt/personal-training"),

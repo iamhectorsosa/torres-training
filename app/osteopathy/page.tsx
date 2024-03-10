@@ -25,21 +25,23 @@ const images: { alt: string; src: StaticImageData }[] = [
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://torrestraining.pt"),
-  title: "Osteopathy | Torres Training",
+  title: "Osteopathy | Torres Training by Fabio Torres",
   description:
     "Discover the power of personalized Osteopathy to heal, revitalize, and empower your body",
   keywords: [
-    "Lisbon",
-    "Personal",
-    "Trainer",
-    "Personal Trainer",
-    "Osteopath",
-    "English",
-    "Gym",
-    "Fitness",
+    "osteopathy services Lisbon",
+    "holistic health for expats Lisbon",
+    "personalized osteopathy treatment",
+    "physical therapy for foreigners Lisbon",
+    "English speaking osteopath Lisbon",
+    "active recovery and health Lisbon",
+    "musculoskeletal expert Lisbon",
+    "pain relief osteopathy Lisbon",
+    "osteopathic consultation online",
+    "body alignment specialist Lisbon",
   ],
   openGraph: {
-    title: "Osteopathy | Torres Training",
+    title: "Osteopathy | Torres Training by Fabio Torres",
     description:
       "Discover the power of personalized Osteopathy to heal, revitalize, and empower your body",
     url: new URL("https://torrestraining.pt/osteopathy"),
