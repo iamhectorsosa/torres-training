@@ -7,6 +7,7 @@ import { Menu } from "@/components/Menu";
 import { Footer } from "@/components/Footer";
 import { Providers } from "@/components/Providers";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import type { ProfessionalService, WithContext } from "schema-dts";
 
 const fontHeadings = FontHeadings({
   subsets: ["latin"],
@@ -47,6 +48,45 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd: WithContext<ProfessionalService> = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Torres Training",
+  image: "https://torrestraining.pt/opengraph-image.png",
+  "@id": "https://torrestraining.pt",
+  url: "https://torrestraining.pt",
+  telephone: "351961379705",
+  priceRange: "40 euros",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "R. Rodrigues Sampaio 170A, 1150-279 Lisboa, Portugal",
+    addressRegion: "Lisbon",
+    addressLocality: "Lisbon",
+    postalCode: "1150-279",
+    addressCountry: "PT",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 38.7246519,
+    longitude: -9.147941,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "00:00",
+    closes: "23:59",
+  },
+  sameAs: "https://www.instagram.com/pt.fabiotorres",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,6 +101,10 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Providers>
           <main className="z-10 bg-background">
             <div className="sticky top-0 z-30 w-full bg-background/80 px-6 pb-4 pt-8 backdrop-blur-lg">

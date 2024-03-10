@@ -8,152 +8,136 @@ import IMG_9211 from "../public/images/IMG_9211.jpg";
 import { Certifications } from "@/components/Certifications";
 import { Reviews } from "@/components/Reviews";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  name: "Welcome to Torres Training by Fabio Torres",
-  image: "https://torrestraining.pt/opengraph-image.png",
-  description:
-    "Personal Trainer & Osteopath. Ready to take your fitness to the next level?",
-};
-
 export default async function Home() {
   const { reviews } = await getReviews();
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="w-full space-y-16">
-        <section className="space-y-4">
-          <InView className="flex h-[70dvh] max-w-4xl flex-col justify-center gap-y-4 px-6">
-            <div>
-              <h1 className="font-bold uppercase tracking-wide lg:text-xl">
-                Torres Training
-              </h1>
-              <h2 className="text-balance font-headings text-6xl font-medium uppercase leading-none lg:text-8xl">
-                Personal Trainer and Osteopath
-              </h2>
-            </div>
-            <p className="text-balance text-xl tracking-tight text-muted-foreground">
-              Ready to take your fitness to the next level?
-            </p>
-            <Button asChild size="lg">
-              <Link href="#me">Start your journey</Link>
-            </Button>
-            <Scroll />
-          </InView>
-          <InView margin="0px">
-            <Slideshow />
-          </InView>
-        </section>
-        <section id="me" className="scroll-mt-24 space-y-8">
-          <InView className="mx-auto max-w-4xl space-y-4 px-6">
-            <Image
-              placeholder="blur"
-              priority
-              src={IMG_9211}
-              alt={"Fabio Torres"}
-              className="aspect-square size-[240px] rounded-full object-cover object-top shadow"
-              sizes="240px"
-            />
-            <div className="space-y-4">
-              <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
-                Fabio Torres
-              </h2>
-              <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
-                I am dedicated to helping individuals of all fitness levels
-                achieve their health and wellness goals
-              </h3>
-              <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
-                Over the last decade in Lisbon, Portugal, I&apos;ve successfully
-                helped numerous clients achieve their fitness goals, ranging
-                from weight loss and muscle gain, to improved athletic
-                performance, functional rehabilitation, and overall fitness.
-              </p>
-            </div>
-          </InView>
-          <InView>
-            <Certifications />
-          </InView>
-        </section>
-        <section className="space-y-8">
-          <InView className="mx-auto max-w-4xl space-y-4 px-6">
-            <div className="space-y-1">
-              <span className="bg-gradient-to-b from-foreground via-foreground to-transparent bg-clip-text text-5xl font-bold leading-none tracking-tight text-transparent opacity-60">
-                01
-              </span>
-              <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
-                Personal Training
-              </h2>
-            </div>
-            <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
-              Are you ready to embark on a journey to transform your health and
-              fitness? Look no further!
-            </h3>
-            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
-              Elevate your fitness journey with personalized 1-1 training
-              sessions tailored to your goals, preferences, and fitness level.
-              whether you&apos;re aiming to lose weight, build muscle, improve
-              endurance, or enhance overall wellness, let&apos;s achieve
-              long-lasting results.
-            </p>
-            <Button className="w-fit" variant="secondary" asChild>
-              <Link href="/personal-training">More on Personal Training</Link>
-            </Button>
-          </InView>
-          <InView className="mx-auto max-w-4xl space-y-4 px-6">
-            <div className="space-y-1">
-              <span className="bg-gradient-to-b from-foreground via-foreground to-transparent bg-clip-text text-5xl font-bold leading-none tracking-tight text-transparent opacity-60">
-                02
-              </span>
-              <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
-                Osteopathy
-              </h2>
-            </div>
-            <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
-              Discover the power of personalized Osteopathy to heal, revitalize,
-              and empower your body
-            </h3>
-            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
-              Osteopathy is a system of diagnosis and treatment for a wide range
-              of medical conditions. By addressing the root cause of discomfort,
-              we ensure rapid, sustainable recovery. Embrace a life free from
-              limitations and move fearlessly with our specialized,
-              action-packed care.
-            </p>
-            <Button className="w-fit" variant="secondary" asChild>
-              <Link href="/osteopathy">More on Osteopathy</Link>
-            </Button>
-          </InView>
-        </section>
-        <section className="space-y-4">
-          <InView className="mx-auto max-w-4xl space-y-4 px-6">
+    <div className="w-full space-y-16">
+      <section className="space-y-4">
+        <InView className="flex h-[70dvh] max-w-4xl flex-col justify-center gap-y-4 px-6">
+          <div>
+            <h1 className="font-bold uppercase tracking-wide lg:text-xl">
+              Torres Training
+            </h1>
+            <h2 className="text-balance font-headings text-6xl font-medium uppercase leading-none lg:text-8xl">
+              Personal Trainer and Osteopath
+            </h2>
+          </div>
+          <p className="text-balance text-xl tracking-tight text-muted-foreground">
+            Ready to take your fitness to the next level?
+          </p>
+          <Button asChild size="lg">
+            <Link href="#me">Start your journey</Link>
+          </Button>
+          <Scroll />
+        </InView>
+        <InView margin="0px">
+          <Slideshow />
+        </InView>
+      </section>
+      <section id="me" className="scroll-mt-24 space-y-8">
+        <InView className="mx-auto max-w-4xl space-y-4 px-6">
+          <Image
+            placeholder="blur"
+            priority
+            src={IMG_9211}
+            alt={"Fabio Torres"}
+            className="aspect-square size-[240px] rounded-full object-cover object-top shadow"
+            sizes="240px"
+          />
+          <div className="space-y-4">
             <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
-              Reviews
+              Fabio Torres
             </h2>
             <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
-              Commitment reflected in stories of those who share their
-              experience
+              I am dedicated to helping individuals of all fitness levels
+              achieve their health and wellness goals
             </h3>
             <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
-              My mission is helping my clients stay accountable, motivated and
-              transform their lives through an amazing fitness journey.
+              Over the last decade in Lisbon, Portugal, I&apos;ve successfully
+              helped numerous clients achieve their fitness goals, ranging from
+              weight loss and muscle gain, to improved athletic performance,
+              functional rehabilitation, and overall fitness.
             </p>
-            <Button variant="secondary" asChild>
-              <Link href="https://maps.app.goo.gl/iMMfzYVmYkGzsFZ39">
-                More on Google Reviews
-              </Link>
-            </Button>
-          </InView>
-          <InView className="pb-16">
-            <Reviews reviews={reviews} />
-          </InView>
-        </section>
-      </div>
-    </>
+          </div>
+        </InView>
+        <InView>
+          <Certifications />
+        </InView>
+      </section>
+      <section className="space-y-8">
+        <InView className="mx-auto max-w-4xl space-y-4 px-6">
+          <div className="space-y-1">
+            <span className="bg-gradient-to-b from-foreground via-foreground to-transparent bg-clip-text text-5xl font-bold leading-none tracking-tight text-transparent opacity-60">
+              01
+            </span>
+            <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
+              Personal Training
+            </h2>
+          </div>
+          <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
+            Are you ready to embark on a journey to transform your health and
+            fitness? Look no further!
+          </h3>
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
+            Elevate your fitness journey with personalized 1-1 training sessions
+            tailored to your goals, preferences, and fitness level. whether
+            you&apos;re aiming to lose weight, build muscle, improve endurance,
+            or enhance overall wellness, let&apos;s achieve long-lasting
+            results.
+          </p>
+          <Button className="w-fit" variant="secondary" asChild>
+            <Link href="/personal-training">More on Personal Training</Link>
+          </Button>
+        </InView>
+        <InView className="mx-auto max-w-4xl space-y-4 px-6">
+          <div className="space-y-1">
+            <span className="bg-gradient-to-b from-foreground via-foreground to-transparent bg-clip-text text-5xl font-bold leading-none tracking-tight text-transparent opacity-60">
+              02
+            </span>
+            <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
+              Osteopathy
+            </h2>
+          </div>
+          <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
+            Discover the power of personalized Osteopathy to heal, revitalize,
+            and empower your body
+          </h3>
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
+            Osteopathy is a system of diagnosis and treatment for a wide range
+            of medical conditions. By addressing the root cause of discomfort,
+            we ensure rapid, sustainable recovery. Embrace a life free from
+            limitations and move fearlessly with our specialized, action-packed
+            care.
+          </p>
+          <Button className="w-fit" variant="secondary" asChild>
+            <Link href="/osteopathy">More on Osteopathy</Link>
+          </Button>
+        </InView>
+      </section>
+      <section className="space-y-4">
+        <InView className="mx-auto max-w-4xl space-y-4 px-6">
+          <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
+            Reviews
+          </h2>
+          <h3 className="max-w-lg font-bold uppercase tracking-wide md:text-lg lg:text-xl">
+            Commitment reflected in stories of those who share their experience
+          </h3>
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
+            My mission is helping my clients stay accountable, motivated and
+            transform their lives through an amazing fitness journey.
+          </p>
+          <Button variant="secondary" asChild>
+            <Link href="https://maps.app.goo.gl/iMMfzYVmYkGzsFZ39">
+              More on Google Reviews
+            </Link>
+          </Button>
+        </InView>
+        <InView className="pb-16">
+          <Reviews reviews={reviews} />
+        </InView>
+      </section>
+    </div>
   );
 }
 
