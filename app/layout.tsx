@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { Providers } from "@/components/Providers";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import type { ProfessionalService, WithContext } from "schema-dts";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const fontHeadings = FontHeadings({
   subsets: ["latin"],
@@ -94,11 +95,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <GoogleTagManager gtmId="GTM-K4SF6B78" />
       <body
         className={cn(
           "min-h-dvh flex flex-col bg-background font-sans antialiased",
           fontHeadings.variable,
-          fontSans.variable
+          fontSans.variable,
         )}
       >
         <script
