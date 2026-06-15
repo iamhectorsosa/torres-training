@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-import { z } from "zod";
+import { z, type output as ZodOutput } from "zod";
 
 // fake import to get @types/node in the playground
 import {} from "fs";
@@ -14,6 +14,6 @@ envVariables.parse(process.env);
 
 declare global {
   namespace NodeJS {
-    interface ProcessEnv extends z.infer<typeof envVariables> {}
+    interface ProcessEnv extends ZodOutput<typeof envVariables> {}
   }
 }
