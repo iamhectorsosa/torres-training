@@ -27,7 +27,15 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = (
 ) => {
   const form = useForm<ContactFormFields>({
     resolver: zodResolver(formSchema),
-    defaultValues,
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      personal_training: false,
+      osteopathy: false,
+      notes: "",
+      ...defaultValues,
+    },
   });
 
   const { isPending, execute } = useServerFunction(formAction, {
