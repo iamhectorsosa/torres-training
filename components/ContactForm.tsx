@@ -70,11 +70,7 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = (
             <FormItem>
               <FormLabel>Phone</FormLabel>
               <FormControl>
-                <Input
-                  type="tel"
-                  placeholder="+, a non-zero country code, and 7 to 15 digits total with no spaces"
-                  {...field}
-                />
+                <Input type="tel" placeholder="+12125551234" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

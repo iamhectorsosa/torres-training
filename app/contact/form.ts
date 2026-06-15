@@ -5,7 +5,8 @@ export const formSchema = z.object({
     message: "Please enter a name longer than 2 characters.",
   }),
   phone: z.e164({
-    message: "Please enter a valid phone number",
+    message:
+      "Please enter a valid phone number - +, a non-zero country code, and 7 to 15 digits total with no spaces",
   }),
   email: z.email({
     message: "Please enter a valid email.",
