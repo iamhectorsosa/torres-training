@@ -7,6 +7,7 @@ import { Slideshow } from "@/components/Slideshow";
 import IMG_9211 from "../public/images/IMG_9211.jpg";
 import { Certifications } from "@/components/Certifications";
 import { Reviews } from "@/components/Reviews";
+import { ContactForm } from "@/components/ContactForm";
 
 export default async function Home() {
   const { reviews } = await getReviews();
@@ -60,6 +61,9 @@ export default async function Home() {
               functional rehabilitation, and overall fitness.
             </p>
           </div>
+          <Button asChild size="lg">
+            <Link href="/contact">Book your session</Link>
+          </Button>
         </InView>
         <InView>
           <Certifications />
@@ -133,8 +137,26 @@ export default async function Home() {
             </Link>
           </Button>
         </InView>
-        <InView className="pb-16">
+        <InView>
           <Reviews reviews={reviews} />
+        </InView>
+      </section>
+      <section className="space-y-4">
+        <InView className="mx-auto max-w-4xl space-y-4 px-6 pb-16">
+          <h2 className="text-balance font-headings text-5xl font-medium uppercase leading-none lg:text-6xl">
+            Contact
+          </h2>
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
+            Whether you&apos;re seeking to elevate your fitness through
+            personalized training or aiming to enhance your overall well-being
+            through our specialized osteopathy approach, we&apos;re here to
+            guide you every step of the way.
+          </p>
+          <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl lg:leading-relaxed">
+            Your next chapter starts now—let&apos;s make it extraordinary. Fill
+            out the form below and we will get back to you soon.
+          </p>
+          <ContactForm />
         </InView>
       </section>
     </div>
@@ -147,7 +169,7 @@ async function getReviews(): Promise<typeof staticReviews> {
   try {
     const url = `https://places.googleapis.com/v1/places/${process.env.GOOGLE_MAPS_PLACE_ID}?fields=reviews,userRatingCount,rating&languageCode=en&key=${process.env.GOOGLE_MAPS_KEY}`;
     const response = await fetch(url, { next: { revalidate: 86400 } }).then(
-      (res) => res.json()
+      (res) => res.json(),
     );
 
     const { reviews, userRatingCount, rating } = response;
@@ -156,7 +178,7 @@ async function getReviews(): Promise<typeof staticReviews> {
     }
   } catch (error) {
     console.error(
-      error instanceof Error ? error : "Unknown error fetching reviews"
+      error instanceof Error ? error : "Unknown error fetching reviews",
     );
   }
 

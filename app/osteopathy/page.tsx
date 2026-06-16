@@ -74,6 +74,11 @@ export default async function Osteopathy() {
           limitations and move fearlessly with our specialized, action-packed
           care.
         </p>
+        <Button size="lg" asChild>
+          <Link target="_blank" href="https://wa.me/351961379705">
+            Start a conversation with Fabio
+          </Link>
+        </Button>
       </InView>
       <div className="mx-auto max-w-4xl space-y-8">
         <InView margin="0px">
@@ -115,7 +120,7 @@ export default async function Osteopathy() {
           today and move closer to a balanced, pain-free life.
         </p>
         <Button size="lg" asChild>
-          <Link href="https://wa.me/351961379705">
+          <Link target="_blank" href="https://wa.me/351961379705">
             Start a conversation with Fabio
           </Link>
         </Button>

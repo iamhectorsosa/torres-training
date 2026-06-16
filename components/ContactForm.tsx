@@ -23,11 +23,19 @@ import { toast } from "sonner";
 import { useServerFunction } from "@/lib/utils";
 
 export const ContactForm: React.FC<Partial<ContactFormFields>> = (
-  defaultValues
+  defaultValues,
 ) => {
   const form = useForm<ContactFormFields>({
     resolver: zodResolver(formSchema),
-    defaultValues,
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      personal_training: false,
+      osteopathy: false,
+      notes: "",
+      ...defaultValues,
+    },
   });
 
   const { isPending, execute } = useServerFunction(formAction, {
@@ -35,6 +43,7 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = (
       toast.success("Email sent!", {
         description: `Thanks for reaching out, ${variables.name}!`,
       });
+      form.reset();
     },
     onError: (error) => {
       toast.error("Something went wrong!", {
@@ -57,6 +66,19 @@ export const ContactForm: React.FC<Partial<ContactFormFields>> = (
               <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input placeholder="John Doe" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone</FormLabel>
+              <FormControl>
+                <Input type="tel" placeholder="+12125551234" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

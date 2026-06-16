@@ -91,6 +91,11 @@ export default async function PersonalTraining() {
           you&apos;re aiming to lose weight, build muscle, improve endurance, or
           enhance overall wellness, let&apos;s achieve long-lasting results.
         </p>
+        <Button size="lg" asChild>
+          <Link target="_blank" href="https://wa.me/351961379705">
+            Start a conversation with Fabio
+          </Link>
+        </Button>
       </InView>
       <div className="mx-auto max-w-4xl space-y-8">
         <InView margin="0px">
@@ -150,7 +155,7 @@ export default async function PersonalTraining() {
           begin your journey to a stronger, healthier you.
         </p>
         <Button size="lg" asChild>
-          <Link href="https://wa.me/351961379705">
+          <Link target="_blank" href="https://wa.me/351961379705">
             Start a conversation with Fabio
           </Link>
         </Button>

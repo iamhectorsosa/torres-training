@@ -14,11 +14,15 @@ import {
 
 export const ContactEmail = ({
   name,
+  phone,
+  email,
   notes,
   personal_training,
   osteopathy,
 }: {
   name: string;
+  phone: string;
+  email: string;
   notes?: string;
   personal_training?: boolean;
   osteopathy?: boolean;
@@ -34,6 +38,9 @@ export const ContactEmail = ({
         />
         <Text style={heading}>Message received</Text>
         <Text style={paragraph}>Hi {name},</Text>
+        <Text style={paragraph}>
+          Phone: {phone} | Email: {email}
+        </Text>
         <Text style={paragraph}>
           Welcome and thank you for reaching out to Torres Training!
         </Text>

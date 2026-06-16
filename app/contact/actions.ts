@@ -11,6 +11,7 @@ const TEST_EMAIL = "hello@hectorsosa.me";
 
 export async function formAction({
   name,
+  phone,
   email,
   personal_training,
   osteopathy,
@@ -26,6 +27,8 @@ export async function formAction({
     text: "We will reach out to you shortly",
     react: ContactEmail({
       name,
+      phone,
+      email,
       personal_training,
       osteopathy,
       notes,
