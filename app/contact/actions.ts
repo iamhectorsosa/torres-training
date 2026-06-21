@@ -7,6 +7,7 @@ import { ContactEmail } from "@/components/email/template";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const FABIO_EMAIL = "ptfabiotorres@gmail.com";
+const CONTACT_EMAIL = "teloptstudio@gmail.com";
 const TEST_EMAIL = "hello@hectorsosa.me";
 
 export async function formAction({
@@ -21,7 +22,7 @@ export async function formAction({
     from: "Fabio from Torres Training <noreply@torrestraining.pt>",
     to:
       process.env.NODE_ENV === "production"
-        ? [FABIO_EMAIL, email]
+        ? [FABIO_EMAIL, CONTACT_EMAIL, email]
         : [TEST_EMAIL],
     subject: `Hi ${name}! Your contact message was received`,
     text: "We will reach out to you shortly",
